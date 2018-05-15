@@ -16,7 +16,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://localhost:3001"
+      "target": "https://cheesepets-api.herokuapp.com/"
     }
   }
 }
