@@ -37,7 +37,7 @@ class EditProfile extends Component {
     const user = jwtDecoder(this.props.token);
     console.log(user);
     axios({
-      url: `http://cheesepets-api.herokuapp.com/users/${user.sub}.json`,
+      url: `https://cheesepets-api.herokuapp.com/users/${user.sub}.json`,
       method: "get",
       headers: {
         authorization: `Bearer ${this.props.token}`
@@ -56,7 +56,7 @@ class EditProfile extends Component {
     console.log(this.state.username);
     const user = jwtDecoder(this.props.token);
 
-    let url = `http://cheesepets-api.herokuapp.com/users/${
+    let url = `https://cheesepets-api.herokuapp.com/users/${
       user.sub
     }.json`;
     console.log(url);

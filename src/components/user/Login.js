@@ -18,7 +18,7 @@ class Login extends Component {
   }
 
   handleClick = () => {
-    let url = "http://cheesepets-api.herokuapp.com/user_token";
+    let url = "https://cheesepets-api.herokuapp.com/user_token";
 
     let postData = {
           auth: {

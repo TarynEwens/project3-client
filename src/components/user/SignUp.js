@@ -36,7 +36,7 @@ class SignUp extends Component {
       .then(() => {
         this.setState({ success: "Success your account was created!" });
         axios({
-          url: "http://cheesepets-api.herokuapp.com/user_token",
+          url: "https://cheesepets-api.herokuapp.com/user_token",
           method: "post",
           data: {
             auth: {
