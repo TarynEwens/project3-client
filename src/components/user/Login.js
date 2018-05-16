@@ -18,7 +18,7 @@ class Login extends Component {
   }
 
   handleClick = () => {
-    let url = "https://cheesepets-api.herokuapp.com/user_token";
+    let url = "https://cheesepets-db.herokuapp.com/user_token";
 
     let postData = {
           auth: {
@@ -41,6 +41,7 @@ class Login extends Component {
         localStorage.setItem('jwtToken', token);
         if(res.status === 201) {
           this.setState({redirect: true})
+          console.log(this.state.redirect);
         }
       })
       .catch((err) => {

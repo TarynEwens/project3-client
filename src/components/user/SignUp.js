@@ -14,7 +14,7 @@ class SignUp extends Component {
   };
 
   handleClick = () => {
-    let url = "http://cheesepets-api.herokuapp.com/users.json";
+    let url = "https://cheesepets-db.herokuapp.com/users.json";
     console.log("clicked");
     console.log(this.state.username, this.state.email, this.state.password, this.state.password_confirmation);
     let postData = {
@@ -36,7 +36,7 @@ class SignUp extends Component {
       .then(() => {
         this.setState({ success: "Success your account was created!" });
         axios({
-          url: "https://cheesepets-api.herokuapp.com/user_token",
+          url: "https://cheesepets-db.herokuapp.com/user_token",
           method: "post",
           data: {
             auth: {
