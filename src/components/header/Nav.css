@@ -1,0 +1,39 @@
+.navLinkHelp{
+  margin-right: 36px;
+}
+.signOutNav{
+  margin-left: -39px;
+  border: none;
+  background-color: rgb(0, 188, 212);
+  padding: .5em 1em;
+  border-radius: 3px;
+  color: white;
+}
+
+.signOutNav:hover{
+  margin-left: -39px;
+  border: none;
+  background-color: lightgrey;
+  padding: .5em 1em;
+  border-radius: 3px;
+  color: white;
+}
+
+.nav_bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1em 1.3em;
+  background-color: #f7f7f7;
+}
+
+.nav_bar a {
+  font-size: .89rem;
+  padding-left: 3em;
+  color: #333333;
+  text-decoration: none;
+}
+
+.nav_bar a:hover {
+  color: lightgrey;
+}

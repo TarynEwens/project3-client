@@ -88,7 +88,7 @@ class Login extends Component {
             />
           </div>
 
-        {this.state.redirect ? <Redirect to='/editprofile'/>:null}
+        {this.state.redirect ? <Redirect to='/petprofile'/>:null}
         <br />
       </div>
     );

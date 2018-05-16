@@ -46,7 +46,7 @@ class SignUp extends Component {
           }
         }).then(async (res) => {
           await localStorage.setItem("jwtToken", res.jwt);
-          this.props.history.push("/EditProfile");
+          this.props.history.push("/adopt");
         });
       })
       .catch(err => {
