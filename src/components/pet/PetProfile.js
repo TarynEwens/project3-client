@@ -37,7 +37,7 @@ class PetProfile extends Component {
       success: "",
       redirect: false,
       image: "",
-      action: "neutral"
+      action: "neutral",
     }
   }
 
@@ -117,7 +117,8 @@ class PetProfile extends Component {
     handleHug = async () =>  {
       if (this.state.happiness < 30) {
         this.setState({
-          happiness: this.state.happiness + 2,
+          happiness: this.state.happiness + 4,
+          energy: this.state.energy - 2,
           action: "happiness"
         })
 
@@ -135,7 +136,8 @@ class PetProfile extends Component {
           authorization: `Bearer ${this.props.token}`
         },
         data: {
-          happiness: this.state.happiness
+          happiness: this.state.happiness,
+          energy: this.state.energy
         }
       }).then(res => { this.fetchPet() })
         .catch((err) => {
@@ -148,7 +150,8 @@ class PetProfile extends Component {
     handleNap = async () =>  {
       if (this.state.energy < 30) {
         this.setState({
-          energy: this.state.energy + 2,
+          energy: this.state.energy + 4,
+          hunger: this.state.hunger - 2,
           action: "nap"
         })
       } else {
@@ -165,7 +168,8 @@ class PetProfile extends Component {
           authorization: `Bearer ${this.props.token}`
         },
         data: {
-          energy: this.state.energy
+          energy: this.state.energy,
+          hunger: this.state.hunger
         }
       }).then(res => { this.fetchPet() })
         .catch((err) => {
@@ -205,10 +209,10 @@ class PetProfile extends Component {
                 onClick={this.handleNap}
               />
 
-              <p><strong>Hunger:</strong> {this.state.hunger}</p>
-              <p><strong>Happiness:</strong> {this.state.happiness}</p>
-              <p><strong>Fun:</strong> {this.state.fun}</p>
-              <p><strong>Energy:</strong> {this.state.energy}</p>
+              <p><strong>Hunger:</strong> {this.state.hunger} / 30</p>
+              <p><strong>Happiness:</strong> {this.state.happiness} / 30</p>
+              <p><strong>Fun:</strong> {this.state.fun} / 30</p>
+              <p><strong>Energy:</strong> {this.state.energy} / 30</p>
             </div>
           </div>
         );
