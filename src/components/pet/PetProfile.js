@@ -49,6 +49,7 @@ class PetProfile extends Component {
       redirect: false,
       image: "",
       action: "neutral",
+      statement: ""
     }
   }
 
@@ -145,13 +146,14 @@ class PetProfile extends Component {
         this.setState({
           happiness: this.state.happiness + 4,
           energy: this.state.energy - 2,
-          action: "happiness"
+          action: "happiness",
+          statement: "\"Awww, I love hugs! I'm so happy!\""
         })
 
       } else {
-        alert("No more hugs thanks!")
         this.setState({
-          action: "neutral"
+          action: "neutral",
+          statement: "\"No more hugs thanks.\""
         })
       }
       await console.log(this.state.happiness);
@@ -168,7 +170,10 @@ class PetProfile extends Component {
       }).then(res => { this.fetchPet() })
         .catch((err) => {
           if(err) {
-            alert("No more hugs thanks!")
+            this.setState({
+              action: "neutral",
+              statement: "\"No more hugs thanks.\""
+            })
           };
         })
     }
@@ -178,12 +183,13 @@ class PetProfile extends Component {
         this.setState({
           energy: this.state.energy + 4,
           hunger: this.state.hunger - 2,
-          action: "nap"
+          action: "nap",
+          statement: "\"ZzzzZZZzzzZzzz\""
         })
       } else {
-        alert("No thanks, I'm not tired!")
         this.setState({
-          action: "neutral"
+          action: "neutral",
+          statement: "\"No thanks, I'm not tired.\""
         })
       }
       await console.log(this.state.energy);
@@ -200,7 +206,10 @@ class PetProfile extends Component {
       }).then(res => { this.fetchPet() })
         .catch((err) => {
           if(err) {
-            alert("No thanks, I'm not tired!")
+            this.setState({
+              action: "neutral",
+              statement: "\"No thanks, I'm not tired.\""
+            })
           };
         })
     }
@@ -219,6 +228,7 @@ class PetProfile extends Component {
               <p>Adopted by: {this.state.username} from {this.state.location}</p>
 
               <img src={this.state.image} name="Axolotl" alt="Axolotl" className="pet-profile" onClick={this._imageClick} />
+              <p>{this.state.statement}</p>
 
               <RaisedButton
                 label="Hug Pet"
