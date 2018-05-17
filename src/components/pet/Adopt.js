@@ -43,7 +43,7 @@ class Adopt extends Component {
         const user = jwtDecoder(this.props.token);
         console.log(user);
         axios({
-          url: `https://cheesepets-api.herokuapp.com/users/${user.sub}.json`,
+          url: `https://cheesepets-db.herokuapp.com/users/${user.sub}.json`,
           method: "get",
           headers: {
             authorization: `Bearer ${this.props.token}`
@@ -62,7 +62,7 @@ class Adopt extends Component {
         console.log(this.state.name, this.state.species);
         const user = jwtDecoder(this.props.token);
 
-        let url = `https://cheesepets-api.herokuapp.com/pets.json`;
+        let url = `https://cheesepets-db.herokuapp.com/pets.json`;
 
         axios({
           url: url,

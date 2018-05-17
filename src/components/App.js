@@ -11,7 +11,7 @@ class App extends Component {
       let token = "Bearer " + localStorage.getItem("jwt")
       console.log(token)
       $.ajax({
-        url: "https://cheesepets-api.herokuapp.com/items.json",
+        url: "https://cheesepets-db.herokuapp.com/items.json",
         type: "GET",
         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', token)},
         context: this, // Allows us to use this.setState inside success
@@ -28,7 +28,7 @@ class App extends Component {
     const password = $("#password").val()
     const request = {"auth": {"email": email, "password": password}}
     $.ajax({
-      url: "https://cheesepets-api.herokuapp.com/user_token",
+      url: "https://cheesepets-db.herokuapp.com/user_token",
       type: "POST",
       data: request,
       dataType: "json",

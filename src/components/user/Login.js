@@ -50,10 +50,11 @@ class Login extends Component {
         };
       })
 
+
   }
 
-  goToHomePage = () => {
-    this.props.history.push('/');
+  goToNextPage = () => {
+    this.props.history.push('/petprofile');
   }
 
   render() {
