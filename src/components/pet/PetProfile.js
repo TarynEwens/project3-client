@@ -30,14 +30,14 @@ class PetProfile extends Component {
       bio: "",
       name: "",
       species: "",
-      hunger: 30,
-      happiness: 30,
-      fun: 30,
-      energy: 30,
+      hunger: "",
+      happiness: "",
+      fun: "",
+      energy: "",
       success: "",
       redirect: false,
       image: "",
-      action: ""
+      action: "neutral"
     }
   }
 
@@ -100,7 +100,7 @@ class PetProfile extends Component {
       };
 
       imageState = () => {
-        if (this.state.species === "Axolotl" && this.state.action === "") {
+        if (this.state.species === "Axolotl" && this.state.action === "neutral") {
           this.setState({image: AxolotlNeutral})
         } else if (this.state.species === "Axolotl" && this.state.action === "hunger") {
           this.setState({image: AxolotlHunger})
@@ -114,64 +114,18 @@ class PetProfile extends Component {
 
       }
 
-
-      _handleSubmit = e => {
-        e.preventDefault();
-        console.log(this.state.name, this.state.species);
-        const user = jwtDecoder(this.props.token);
-
-        let url = `https://cheesepets-db.herokuapp.com/pets.json`;
-
-        axios({
-          url: url,
-          method: "post",
-          headers: {
-            authorization: `Bearer ${this.props.token}`
-          },
-          data: {
-            name: this.state.name,
-            species: this.state.species,
-            hunger: this.state.hunger,
-            happiness: this.state.happiness,
-            fun: this.state.fun,
-            energy: this.state.energy,
-            user_id: user.sub
-          }
-        }).then(res => {
-          if (res.status === 201) {
-            this.setState({redirect: true})
-          }
-
-
-        });
-      };
-
-      _handleChange = event => {
-        if (event.target.id === "name-field") {
-          this.setState({
-            name: event.target.value
-          });
-        }
-        // if (event.target.id === "species-field") {
-        //   this.setState({
-        //     species: event.target.value
-        //   });
-        // }
-      };
-
-    _imageClick = event => {
-     console.log(event.target.name);
-     console.log("click");
-      this.setState({
-        species: event.target.name
-      })
-    }
-
     handleHug = async () =>  {
       if (this.state.happiness < 30) {
-        this.setState({happiness: this.state.happiness + 2})
+        this.setState({
+          happiness: this.state.happiness + 2,
+          action: "happiness"
+        })
+
       } else {
         alert("No more hugs thanks!")
+        this.setState({
+          action: "neutral"
+        })
       }
       await console.log(this.state.happiness);
       await axios({
@@ -187,6 +141,36 @@ class PetProfile extends Component {
         .catch((err) => {
           if(err) {
             alert("No more hugs thanks!")
+          };
+        })
+    }
+
+    handleNap = async () =>  {
+      if (this.state.energy < 30) {
+        this.setState({
+          energy: this.state.energy + 2,
+          action: "nap"
+        })
+      } else {
+        alert("No thanks, I'm not tired!")
+        this.setState({
+          action: "neutral"
+        })
+      }
+      await console.log(this.state.energy);
+      await axios({
+        url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
+        method: "patch",
+        headers: {
+          authorization: `Bearer ${this.props.token}`
+        },
+        data: {
+          energy: this.state.energy
+        }
+      }).then(res => { this.fetchPet() })
+        .catch((err) => {
+          if(err) {
+            alert("No thanks, I'm not tired!")
           };
         })
     }
