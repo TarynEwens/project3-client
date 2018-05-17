@@ -168,8 +168,11 @@ class PetProfile extends Component {
     }
 
     handleHug = async () =>  {
-
-      this.setState({happiness: this.state.happiness + 2})
+      if (this.state.happiness < 30) {
+        this.setState({happiness: this.state.happiness + 2})
+      } else {
+        alert("No more hugs thanks!")
+      }
       await console.log(this.state.happiness);
       await axios({
         url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
@@ -183,11 +186,9 @@ class PetProfile extends Component {
       }).then(res => { this.fetchPet() })
         .catch((err) => {
           if(err) {
-            alert("Check your email or password!")
+            alert("No more hugs thanks!")
           };
         })
-
-
     }
 
       render() {
