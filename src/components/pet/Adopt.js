@@ -6,11 +6,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import jwtDecoder from "jwt-decode";
 import CircularProgress from "material-ui/CircularProgress";
-import pug from './images/pug/Pug03.png';
-import panda from './images/panda/Panda_Singing.png';
-import rat from './images/rat/Rat_03.png';
-import kitty from './images/kitty/Kitty7.png';
-import axolotl from './images/axolotl/Axolotl_02.png';
+import pug from './images/Pug/Pug_neutral.png';
+import panda from './images/Panda/Panda_neutral.png';
+import rat from './images/Rat/Rat_neutral.png';
+import kitty from './images/Kitty/Kitty_neutral.png';
+import axolotl from './images/Axolotl/Axolotl_neutral.png';
 import css from './Pet.css'
 
 const style = {
@@ -125,11 +125,11 @@ class Adopt extends Component {
                 </div>
 
                   <h4>Choose a Pet</h4>
-                  <img src={pug} name="Puppy" alt="Puppy" onClick={this._imageClick} />
+                  <img src={pug} name="Pug" alt="Pug Puppy" onClick={this._imageClick} />
                   <img src={axolotl} name="Axolotl" alt="Axolotl" onClick={this._imageClick} />
-                  <img src={panda} name="Busy Panda" alt="Busy Panda" onClick={this._imageClick} />
+                  <img src={panda} name="Panda" alt="Busy Panda" onClick={this._imageClick} />
                   <img src={rat} name="Rat" alt="Rat" onClick={this._imageClick} />
-                  <img src={kitty} name="Unicorn Kitty" alt="Unicorn Kitty" onClick={this._imageClick} />
+                  <img src={kitty} name="Kitty" alt="Unicorn Kitty" onClick={this._imageClick} />
 
 
                   <p><strong>Species:</strong> {this.state.species}</p>
