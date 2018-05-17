@@ -6,12 +6,23 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import jwtDecoder from "jwt-decode";
 import CircularProgress from "material-ui/CircularProgress";
+import css from './Pet.css'
+
+// Images
 import AxolotlNeutral from './images/Axolotl/Axolotl_neutral.png';
 import AxolotlHunger from './images/Axolotl/Axolotl_hunger.png';
 import AxolotlFun from './images/Axolotl/Axolotl_fun.png';
 import AxolotlHappiness from './images/Axolotl/Axolotl_happiness.png';
 import AxolotlNap from './images/Axolotl/Axolotl_nap.png';
-import css from './Pet.css'
+
+import PugNeutral from './images/Pug/Pug_neutral.png';
+import PugHunger from './images/Pug/Pug_hunger.png';
+import PugFun from './images/Pug/Pug_fun.png';
+import PugHappiness from './images/Pug/Pug_happiness.png';
+import PugNap from './images/Pug/Pug_nap.png';
+
+
+
 
 const style = {
   margin: 15
@@ -100,6 +111,7 @@ class PetProfile extends Component {
       };
 
       imageState = () => {
+        // Axolotyl
         if (this.state.species === "Axolotl" && this.state.action === "neutral") {
           this.setState({image: AxolotlNeutral})
         } else if (this.state.species === "Axolotl" && this.state.action === "hunger") {
@@ -112,10 +124,24 @@ class PetProfile extends Component {
           this.setState({image: AxolotlNap})
         }
 
+        // Pug
+
+        if (this.state.species === "Pug" && this.state.action === "neutral") {
+          this.setState({image: PugNeutral})
+        } else if (this.state.species === "Pug" && this.state.action === "hunger") {
+          this.setState({image: PugHunger})
+        } else if (this.state.species === "Pug" && this.state.action === "fun") {
+          this.setState({image: PugFun})
+        } else if (this.state.species === "Pug" && this.state.action === "happiness") {
+          this.setState({image: PugHappiness})
+        } else if (this.state.species === "Pug" && this.state.action === "nap") {
+          this.setState({image: PugNap})
+        }
+
       }
 
     handleHug = async () =>  {
-      if (this.state.happiness < 30) {
+      if (this.state.happiness < 50) {
         this.setState({
           happiness: this.state.happiness + 4,
           energy: this.state.energy - 2,
@@ -148,7 +174,7 @@ class PetProfile extends Component {
     }
 
     handleNap = async () =>  {
-      if (this.state.energy < 30) {
+      if (this.state.energy < 50) {
         this.setState({
           energy: this.state.energy + 4,
           hunger: this.state.hunger - 2,
@@ -209,10 +235,10 @@ class PetProfile extends Component {
                 onClick={this.handleNap}
               />
 
-              <p><strong>Hunger:</strong> {this.state.hunger} / 30</p>
-              <p><strong>Happiness:</strong> {this.state.happiness} / 30</p>
-              <p><strong>Fun:</strong> {this.state.fun} / 30</p>
-              <p><strong>Energy:</strong> {this.state.energy} / 30</p>
+              <p><strong>Hunger:</strong> {this.state.hunger} / 50</p>
+              <p><strong>Happiness:</strong> {this.state.happiness} / 50</p>
+              <p><strong>Fun:</strong> {this.state.fun} / 50</p>
+              <p><strong>Energy:</strong> {this.state.energy} / 50</p>
             </div>
           </div>
         );
