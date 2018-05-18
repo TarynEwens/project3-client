@@ -37,3 +37,7 @@
 .nav_bar a:hover {
   color: lightgrey;
 }
+
+img#nav-logo {
+  width: 150px!important;
+}

@@ -1,83 +1,39 @@
-import React, { Component } from 'react'
-// $ is a shortcut for jQuery methods
-import $ from 'jquery'
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {itemsReceived: ""}
-    this.getItems = this.getItems.bind(this)
-  }
-  getItems() {
-      let token = "Bearer " + localStorage.getItem("jwt")
-      console.log(token)
-      $.ajax({
-        url: "https://cheesepets-api.herokuapp.com/items.json",
-        type: "GET",
-        beforeSend: function(xhr){xhr.setRequestHeader('Authorization', token)},
-        context: this, // Allows us to use this.setState inside success
-        success: function (result) {
-          console.log(result)
-          this.setState({itemsReceived: JSON.stringify(result)})
-        }
-      })
+import React, { Component } from 'react';
+import Background from './images/greenhills.jpg';
+import Axolotl from './images/Axolotl_05.png';
+import Pug from './images/Pug_05.png';
+import Logo from './images/cheesepets-logo-large.png';
+import css from './Home.css';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { Parallax } from 'react-scroll-parallax';
+
+
+
+class Home extends Component {
+    render() {
+        return (
+          <div className="container-full">
+            <div className="home-scene1">
+              <div className="container-div">
+                <img src={Logo} id="home-logo"/>
+                <img src={Pug}/>
+              </div>
+            </div>
+            <div className="home-scene2">
+            <div className="container-div">
+
+              <img src={Axolotl}/>
+            </div>
+            </div>
+            <div className="home-scene3">
+            <div className="container-div">
+
+            </div>
+            </div>
+          </div>
+        );
     }
-
-
-  login () {
-    const email = $("#email").val()
-    const password = $("#password").val()
-    const request = {"auth": {"email": email, "password": password}}
-    $.ajax({
-      url: "https://cheesepets-api.herokuapp.com/user_token",
-      type: "POST",
-      data: request,
-      dataType: "json",
-      success: function (result) {
-        console.log(result)
-        localStorage.setItem("jwt", result.jwt)
-      }
-    })
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <h1 style={{marginTop: "20vh", marginBottom: "5vh"}}>
-          CheesePets Home
-        </h1>
-        <form>
-          <label htmlFor="email">Email: </label>
-          <br />
-          <input
-            name="email"
-            id="email"
-            type="email"
-          />
-          <br /><br />
-          <label htmlFor="password">Password:</label>
-          <br />
-          <input
-            name="password"
-            id="password"
-            type="password"
-          />
-          </form>
-          <br />
-          <button
-            onClick={this.login}
-          >
-              Login
-          </button>
-        <br />
-        <button
-          onClick={this.getItems}
-          style={{marginTop: "10vh"}}
-          >
-          Get Items
-        </button>
-        <p>{this.state.itemsReceived}</p>
-      </div>
-    );
-  }
 }
-export default App
+
+
+export default Home;

@@ -18,7 +18,7 @@ class Nav extends Component {
         <nav className="nav_bar">
 
           <Link to="/">
-            <img src={logo} alt=""/>
+            <img src={logo} alt="CheesePets Logo" id="nav-logo"/>
           </Link>
           <Link to ="#"></Link>
 

@@ -14,14 +14,12 @@ import AxolotlHunger from './images/Axolotl/Axolotl_hunger.png';
 import AxolotlFun from './images/Axolotl/Axolotl_fun.png';
 import AxolotlHappiness from './images/Axolotl/Axolotl_happiness.png';
 import AxolotlNap from './images/Axolotl/Axolotl_nap.png';
-
-import PugNeutral from './images/Pug/Pug_neutral.png';
-import PugHunger from './images/Pug/Pug_hunger.png';
-import PugFun from './images/Pug/Pug_fun.png';
-import PugHappiness from './images/Pug/Pug_happiness.png';
-import PugNap from './images/Pug/Pug_nap.png';
-
-
+// 
+// import PugNeutral from './images/Pug/Pug_neutral.png';
+// import PugHunger from './images/Pug/Pug_hunger.png';
+// import PugFun from './images/Pug/Pug_fun.png';
+// import PugHappiness from './images/Pug/Pug_happiness.png';
+// import PugNap from './images/Pug/Pug_nap.png';
 
 
 const style = {
@@ -124,20 +122,20 @@ class PetProfile extends Component {
         } else if (this.state.species === "Axolotl" && this.state.action === "nap") {
           this.setState({image: AxolotlNap})
         }
-
-        // Pug
-
-        if (this.state.species === "Pug" && this.state.action === "neutral") {
-          this.setState({image: PugNeutral})
-        } else if (this.state.species === "Pug" && this.state.action === "hunger") {
-          this.setState({image: PugHunger})
-        } else if (this.state.species === "Pug" && this.state.action === "fun") {
-          this.setState({image: PugFun})
-        } else if (this.state.species === "Pug" && this.state.action === "happiness") {
-          this.setState({image: PugHappiness})
-        } else if (this.state.species === "Pug" && this.state.action === "nap") {
-          this.setState({image: PugNap})
-        }
+        //
+        // // Pug
+        //
+        // if (this.state.species === "Pug" && this.state.action === "neutral") {
+        //   this.setState({image: PugNeutral})
+        // } else if (this.state.species === "Pug" && this.state.action === "hunger") {
+        //   this.setState({image: PugHunger})
+        // } else if (this.state.species === "Pug" && this.state.action === "fun") {
+        //   this.setState({image: PugFun})
+        // } else if (this.state.species === "Pug" && this.state.action === "happiness") {
+        //   this.setState({image: PugHappiness})
+        // } else if (this.state.species === "Pug" && this.state.action === "nap") {
+        //   this.setState({image: PugNap})
+        // }
 
       }
 
@@ -218,8 +216,6 @@ class PetProfile extends Component {
         if (!this.state.user) {
           return <CircularProgress size={60} thickness={7} />;
         }
-
-
 
         return (
           <div>
