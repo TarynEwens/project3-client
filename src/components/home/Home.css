@@ -31,7 +31,7 @@
 
 #home-logo {
   max-width: 75%;
-  margin-top: 120px;
+  margin-top: 60px;
   transform: rotate(-8deg);
 }
 
@@ -109,15 +109,17 @@ p {
 
 #home-axolotl {
   animation: moveInLeft 2s ease-out;
-  transform: translateY(100px);
+  transform: translateY(150px);
 }
 
 #home-panda {
   align-self: flex-end;
+  margin-bottom: -15px;
 }
 
 #home-rat {
   align-self: flex-end;
+  margin-bottom: -15px;
 }
 
 #home-kitty {
@@ -128,6 +130,10 @@ a {
   color: black;
 }
 
+p {
+  margin: 1em auto;
+}
+
 
 @keyframes moveInLeft {
   0% {
@@ -136,7 +142,7 @@ a {
   }
 
   100% {
-    transform: translateY(100px);
+    transform: translateY(150px);
   }
 }
 

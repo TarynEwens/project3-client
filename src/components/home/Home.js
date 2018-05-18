@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Background from './images/greenhills.jpg';
-import Axolotl from './images/Axolotl_05.png';
+import Axolotl from './images/Axolotl_01.png';
 import Pug from './images/Pug_05.png';
 import Panda from './images/Panda_Groceries.png';
 import Kitty from './images/Kitty2.png';
@@ -41,7 +41,8 @@ class Home extends Component {
 
                   <div className="home-text">
                     <div className="home-paragraphs">
-                      <p>Cheese was the most valuable posession for CheesePets, but the people who visited CheeseLand were greedy and wanted all the cheese for themselves. </p><p>They stole so much that the CheesePets had to hide their cheese. The people left the land, but the CheesePets had a new problem... they couldn’t remember where they hid the cheese! </p>
+                      <p>Cheese was the most valuable posession for CheesePets, but the people who visited CheeseLand were greedy and wanted all the cheese for themselves. </p>
+                      <p>They stole so much that the CheesePets had to hide their cheese. The people left the land, but the CheesePets had a new problem... they couldn’t remember where they hid the cheese! </p>
                     </div>
                     </div>
                     <img src={Kitty} className="home-pets"  id="home-kitty"/>
