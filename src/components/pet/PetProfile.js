@@ -14,7 +14,7 @@ import AxolotlHunger from './images/Axolotl/Axolotl_hunger.png';
 import AxolotlFun from './images/Axolotl/Axolotl_fun.png';
 import AxolotlHappiness from './images/Axolotl/Axolotl_happiness.png';
 import AxolotlNap from './images/Axolotl/Axolotl_nap.png';
-// 
+//
 // import PugNeutral from './images/Pug/Pug_neutral.png';
 // import PugHunger from './images/Pug/Pug_hunger.png';
 // import PugFun from './images/Pug/Pug_fun.png';
@@ -218,8 +218,8 @@ class PetProfile extends Component {
         }
 
         return (
-          <div>
-            <div>
+          <div className="container">
+            <div className="pet-container">
               <h1>{this.state.name} the {this.state.species}</h1>
               <p>Adopted by: {this.state.username} from {this.state.location}</p>
 
@@ -240,11 +240,12 @@ class PetProfile extends Component {
                 style={style}
                 onClick={this.handleNap}
               />
-
-              <p><strong>Hunger:</strong> {this.state.hunger} / 50</p>
-              <p><strong>Happiness:</strong> {this.state.happiness} / 50</p>
-              <p><strong>Fun:</strong> {this.state.fun} / 50</p>
-              <p><strong>Energy:</strong> {this.state.energy} / 50</p>
+              <div className="pet-stats">
+                <p><strong>Hunger:</strong> {this.state.hunger} / 50</p>
+                <p><strong>Happiness:</strong> {this.state.happiness} / 50</p>
+                <p><strong>Fun:</strong> {this.state.fun} / 50</p>
+                <p><strong>Energy:</strong> {this.state.energy} / 50</p>
+              </div>
             </div>
           </div>
         );

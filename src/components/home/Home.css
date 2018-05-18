@@ -61,14 +61,14 @@
 }
 
 .home-cto {
- width: 100%;
- background-color: rgba(250,213,106,0.9);
- color: black;
- font-size: 24px;
- text-align: center;
- letter-spacing: 0.1em;
+   width: 100%;
+   background-color: rgba(250,213,106,0.9);
+   color: black;
+   font-size: 24px;
+   text-align: center;
+   letter-spacing: 0.1em;
   font-weight: 300;
- padding: 1em 1em 2em 1em;
+   padding: 1em;
 }
 
 .home-cto h1 {
@@ -154,4 +154,27 @@ p {
   100% {
     transform: translateX(300px);
   }
+}
+
+.signOutNav{
+  margin-left: -39px;
+  border: none;
+  background-color: rgb(0, 188, 212);
+  padding: .5em 1em;
+  border-radius: 3px;
+  color: white;
+  font-size: 20px;
+}
+
+.signOutNav:hover{
+  margin-left: -39px;
+  border: none;
+  background-color: lightgrey;
+  padding: .5em 1em;
+  border-radius: 3px;
+  color: white;
+}
+
+.error-screensize {
+  display: none;
 }

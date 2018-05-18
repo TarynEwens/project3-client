@@ -66,11 +66,14 @@ class Home extends Component {
             </div>
 
             <div className="home-cto">
-              <h1 className="call-to-action"><Link to ="/signup"><span>Sign up</span></Link> to visit CheeseLand and <span>adopt</span> a CheesePet! </h1>
-              <p>Play games to find pieces of cheese and trade them for food and toys. </p><p>Look after your CheesePet and help restore CheeseLand to its former glory!</p>
+            <Link to="/signup">
+              <button className= "signOutNav">Sign up</button>
+            </Link>
+              <h1 className="call-to-action">
+
+               to visit CheeseLand and <span>adopt</span> a CheesePet! </h1>
+              <p>Play games to find pieces of cheese and look after your pet!</p>
             </div>
-
-
           </div>
         );
     }
