@@ -1,13 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 .container-full {
-  min-height: 300vh;
   background-color: rgba(255, 255, 255, 0.6);
   font-size: 140%;
 }
 
 .container-div {
-    max-width: 960px;
-    margin: auto;
-    padding: 2em;
+  max-width: 960px;
+  margin: auto;
 }
 
 .home-scene1 {
@@ -30,5 +31,121 @@
 
 #home-logo {
   max-width: 75%;
-  
+  margin-top: 120px;
+  transform: rotate(-8deg);
+}
+
+.home-pets {
+  max-height: 300px;
+  position: relative;
+}
+
+.home-text {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.home-paragraphs {
+  max-width: 30em;
+  background-color: rgba(255,255,255,0.7);
+  line-height: 1.5em;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+  padding: 1em;
+}
+
+.call-to-action {
+  font-weight: 700;
+  margin: .5em auto;
+}
+
+.home-cto {
+ width: 100%;
+ background-color: rgba(250,213,106,0.9);
+ color: black;
+ font-size: 24px;
+ text-align: center;
+ letter-spacing: 0.1em;
+  font-weight: 300;
+ padding: 1em 1em 2em 1em;
+}
+
+.home-cto h1 {
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.home-cto span {
+  text-transform: uppercase;
+}
+
+.home-cto p  {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0.2em;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+  text-transform: none;
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+
+.home-pet-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+}
+
+#home-pug {
+  animation: moveInRight 3s ease-out;
+  transform: translateX(300px);
+}
+
+#home-axolotl {
+  animation: moveInLeft 2s ease-out;
+  transform: translateY(100px);
+}
+
+#home-panda {
+  align-self: flex-end;
+}
+
+#home-rat {
+  align-self: flex-end;
+}
+
+#home-kitty {
+margin-left: 20px;
+}
+
+a {
+  color: black;
+}
+
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-1000px);
+    /* transform: translateY(1000px); */
+  }
+
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(1000px);
+  }
+
+  100% {
+    transform: translateX(300px);
+  }
 }
