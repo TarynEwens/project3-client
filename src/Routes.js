@@ -19,7 +19,7 @@ const muiTheme = getMuiTheme({
   flatButton: { primaryTextColor: "#5C67E1" }
 });
 
-const token = localStorage.jwtToken;
+const token = window.localStorage.jwtToken;
 
 const Routes = (
   <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>
@@ -36,27 +36,18 @@ const Routes = (
           )
         )} />
         <Route exact path="/adopt" render={props => (
-          token ? (
             <Adopt {...props} token={token}/>
-          ) : (
-            <Redirect to="/login" />
-          )
+
         )} />
         <Route exact path="/login" component={Login}/>
         <Route exact path="/signup" component={SignUp}/>
         <Route exact path="/cheesechase" render={props => (
-          token ? (
             <CheeseChase {...props} token={token}/>
-          ) : (
-            <Redirect to="/" />
-          )
+
         )} />
         <Route exact path="/petprofile" render={props => (
-          token ? (
             <PetProfile {...props} token={token}/>
-          ) : (
-            <Redirect to="/login" />
-          )
+
         )} />
       </Switch>
     </React.Fragment>

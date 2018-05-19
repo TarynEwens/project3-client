@@ -12,7 +12,7 @@ class Nav extends Component {
   render() {
     return (
       <header>
-        <nav className="nav_bar">
+        <nav className="nav_bar" id="nav_bar">
 
           <Link to="/">
             <h1>CheesePets</h1>
@@ -24,7 +24,6 @@ class Nav extends Component {
             <Link to = "/petprofile" className="navLinkHelp">Your Pet</Link>
             <Link to = "/editprofile" className="navLinkHelp">Settings</Link>
             <Link to = "/cheesechase" className="navLinkHelp">Game</Link>
-            <Link to ="#"></Link>
             <Link to="/">
               <button className= "signOutNav" onClick={this._signOut}>Sign out</button>
             </Link>

@@ -2,4 +2,26 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #f7f7f7;
+}
+
+a {
+  color: #00c1d8;
+}
+#nav_bar {
+  display: flex;
+  justify-content: center;
+  padding: 1em 1.3em;
+  background-color: #f7f7f7;
+}
+
+.nav_bar a {
+  font-size: .89rem;
+  padding-left: 3em;
+  color: #333333;
+  text-decoration: none;
+}
+
+.nav_bar a:hover {
+  color: lightgrey;
 }

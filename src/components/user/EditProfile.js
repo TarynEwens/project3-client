@@ -46,7 +46,6 @@ class EditProfile extends Component {
       user: res.data,
       username: res.data.username,
       location: res.data.location,
-      bio: res.data.bio,
       email: res.data.email
       }));
   };
@@ -72,7 +71,6 @@ class EditProfile extends Component {
         password_confirmation: this.state.password_confirmation,
         username: this.state.username,
         location: this.state.location,
-        bio: this.state.bio,
       }
     }).then(res =>
       this.setState({ success: "Success your account was updated!" })
@@ -88,11 +86,6 @@ class EditProfile extends Component {
     if (event.target.id === "location-field") {
       this.setState({
         location: event.target.value
-      });
-    }
-    if (event.target.id === "bio-field") {
-      this.setState({
-        bio: event.target.value
       });
     }
     if (event.target.id === "password-field") {
@@ -115,8 +108,8 @@ class EditProfile extends Component {
 
 
     return (
-      <div>
-        <div>
+      <div className="container form-container">
+        <div className="form-inner-container">
 
           <form onSubmit={this._handleSubmit}>
 
@@ -139,14 +132,6 @@ class EditProfile extends Component {
               hintText="Location"
               floatingLabelText="Location"
               defaultValue={this.state.user.location}
-              onChange={this._handleChange}
-            />
-            <br />
-            <TextField
-              id="bio-field"
-              hintText="Biography"
-              floatingLabelText="Biography"
-              defaultValue={this.state.user.bio}
               onChange={this._handleChange}
             />
 

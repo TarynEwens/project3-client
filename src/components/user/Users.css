@@ -7,32 +7,21 @@
     box-sizing: border-box;
 }
 
-img.pet-profile {
-  max-width: 200px;
-}
-
 .container {
   background-image: url('../home/images/greenhills.jpg');
-  background-attachment: fixed;
   margin: 0;
   padding: 4em;
   min-height: 100vh;
 }
 
-.adopt-container {
-  background-image: url('../home/images/summer.jpg');
-  background-attachment: fixed;
-}
-
 .form-container {
   background-image: url('../home/images/nightforest.jpg');
-  background-attachment: fixed;
 }
 
-.pet-container {
-  max-width: 960px;
+.form-inner-container {
+  max-width: 500px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 0.5em 1em 3em 1em;
   background-color: rgba(255,255,255,0.8);
   text-align: center;
 }
@@ -54,17 +43,4 @@ h1 {
 
 h4#name-pet {
   margin: 2em auto 0 auto;
-}
-
-.item-profile {
-  max-width: 75px;
-}
-
-.all-item-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.all-item-container h2 {
-  display: block;
 }

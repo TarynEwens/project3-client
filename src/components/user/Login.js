@@ -11,8 +11,11 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      redirect: false
+      redirect: false,
+      alert: ""
     };
+
+
   }
 
   handleClick = () => {
@@ -35,13 +38,11 @@ class Login extends Component {
     axios.post(url, postData, axiosConfig)
       .then((res) => {
         console.log("RESPONSE RECEIVED: ", res);
-        ;debugger
         let token = res.data.jwt;
         localStorage.setItem('jwtToken', token);
         if(res.status === 201) {
           this.setState({redirect: true})
           console.log(this.state.redirect);
-          this.props.history.push("/petprofile");
         }
       })
       .catch((err) => {
@@ -49,13 +50,17 @@ class Login extends Component {
           alert("Check your email or password!")
         };
       })
+
+  }
+
+  goToHomePage = () => {
+    this.props.history.push('/');
   }
 
   render() {
     return (
-      <div>
-
-          <div>
+      <div className="container form-container">
+        <div className="form-inner-container">
 
             <h2 style={{marginTop: '3em' }}>Log In</h2>
             <TextField
@@ -82,6 +87,7 @@ class Login extends Component {
               disabled={this.state.email === "" || this.state.password === "" ? true : false}
               onClick={this.handleClick}
             />
+            <p>{this.state.alert}</p>
           </div>
 
         {this.state.redirect ? <Redirect to='/petprofile'/>:null}

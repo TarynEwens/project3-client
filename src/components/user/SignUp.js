@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
+import css from "./Users.css"
 
 class SignUp extends Component {
   state = {
@@ -52,15 +53,15 @@ class SignUp extends Component {
       })
       .catch(err => {
         if(err.message.includes("422")) {
-          alert("Sorry, something went wrong. Try again!")
+          this.setState({ success: "Sorry, something went wrong. Try again!" });
         };
       });
   };
 
   render() {
     return (
-      <div>
-        <div>
+      <div className="container form-container">
+        <div className="form-inner-container">
           <h2 style={{marginTop: '3em' }}>Sign Up</h2>
           <TextField
             hintText="Create a Username"
@@ -99,8 +100,9 @@ class SignUp extends Component {
             disabled={this.state.email !== "" && this.state.password !== "" && this.state.password_confirmation !== "" ? false : true}
             onClick={this.handleClick}
           />
+          <p>{this.state.success}</p>
         </div>
-        <p>{this.state.success}</p>
+
 
       </div>
     );
