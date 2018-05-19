@@ -52,7 +52,11 @@ class PetProfile extends Component {
       image: "",
       action: "neutral",
       statement: "",
-      points: ""
+      points: "",
+      hungerMessage: "",
+      happinessMessage: "",
+      funMessage: "",
+      energyMessage:""
     }
   }
 
@@ -110,6 +114,47 @@ class PetProfile extends Component {
             this.setState({ bio: "A cool person."})
           }
           this.imageState();
+
+          if (this.state.hunger > 40) {
+            this.setState({hungerMessage: "Full"})
+          } else if (this.state.hunger < 40) {
+            this.setState({hungerMessage: "Peckish"})
+          } else if (this.state.hunger < 30) {
+            this.setState({hungerMessage: "Hungry"})
+          } else if (this.state.hunger < 12) {
+            this.setState({hungerMessage: "Starving"})
+          }
+
+          if (this.state.happiness > 40) {
+            this.setState({happinessMessage: "Happy"})
+          } else if (this.state.happiness < 40) {
+            this.setState({happinessMessage: "Content"})
+          } else if (this.state.happiness < 30) {
+            this.setState({happinessMessage: "Lonely"})
+          } else if (this.state.happiness < 12) {
+            this.setState({happinessMessage: "Miserable"})
+          }
+
+          if (this.state.fun > 40) {
+            this.setState({funMessage: "Excited"})
+          } else if (this.state.fun < 40) {
+            this.setState({funMessage: "Amused"})
+          } else if (this.state.fun < 30) {
+            this.setState({funMessage: "Chill"})
+          } else if (this.state.fun < 12) {
+            this.setState({funMessage: "Bored"})
+          }
+
+          if (this.state.energy > 40) {
+            this.setState({energyMessage: "Hyper"})
+          } else if (this.state.energy < 40) {
+            this.setState({energyMessage: "Average"})
+          } else if (this.state.energy < 30) {
+            this.setState({energyMessage: "Tired"})
+          } else if (this.state.energy < 12) {
+            this.setState({energyMessage: "Exhausted"})
+          }
+
         });
       };
 
@@ -144,7 +189,7 @@ class PetProfile extends Component {
       }
 
     handleHug = async () =>  {
-      if (this.state.happiness < 50 && this.state.energy > 2) {
+      if (this.state.happiness < 48 && this.state.energy > 2) {
         this.setState({
           happiness: this.state.happiness + 4,
           energy: this.state.energy - 2,
@@ -186,7 +231,7 @@ class PetProfile extends Component {
 
 
     handleNap = async () =>  {
-      if (this.state.energy < 50 && this.state.hunger > 2) {
+      if (this.state.energy < 48 && this.state.hunger > 2) {
         this.setState({
           energy: this.state.energy + 4,
           hunger: this.state.hunger - 2,
@@ -221,11 +266,12 @@ class PetProfile extends Component {
         })
     }
 
-    handleFun = event =>  {
-      if (this.state.fun < 50 && this.state.hunger > 2) {
+    handleFun = async () =>  {
+      if (this.state.fun < 48 && this.state.hunger > 2 && this.state.points > 30) {
         this.setState({
           fun: this.state.fun + 4,
           hunger: this.state.hunger - 2,
+          points: this.state.points - 30,
           action: "fun",
           statement: "\"This is so fun! I love balls!\""
         })
@@ -236,7 +282,8 @@ class PetProfile extends Component {
           statement: "\"Ugh, no thanks. I'm not in the mood.\""
         })
       }
-       axios({
+      await console.log(this.state.fun);
+       await axios({
         url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
         method: "patch",
         headers: {
@@ -249,19 +296,7 @@ class PetProfile extends Component {
       })
       .then(res => {
 
-        if (this.state.fun < 50 && this.state.hunger > 2) {
-          this.setState({
-            points: this.state.points - 30
-          })
-
-        } else {
-          this.setState({
-            action: "neutral",
-            statement: "\"Thanks, but we can't afford it.\""
-          })
-        }
-
-         axios({
+          axios({
           url: `https://cheesepets-db.herokuapp.com/users/${this.state.user.id}.json`,
           method: "patch",
           headers: {
@@ -288,10 +323,11 @@ class PetProfile extends Component {
 
 
     handleFood = async () =>  {
-      if (this.state.hunger < 50 && this.state.energy > 2) {
+      if (this.state.hunger < 48 && this.state.energy > 2 && this.state.points > 20) {
         this.setState({
           energy: this.state.energy - 2,
           hunger: this.state.hunger + 4,
+          points: this.state.points - 20,
           action: "hunger",
           statement: "\"Oh yum! I love this food!\""
         })
@@ -313,18 +349,6 @@ class PetProfile extends Component {
           hunger: this.state.hunger,
         }
       }).then(res => {
-
-        if (this.state.fun < 50 && this.state.hunger > 2) {
-          this.setState({
-            points: this.state.points - 30
-          })
-
-        } else {
-          this.setState({
-            action: "neutral",
-            statement: "\"Thanks, but we can't afford it.\""
-          })
-        }
 
          axios({
           url: `https://cheesepets-db.herokuapp.com/users/${this.state.user.id}.json`,
@@ -377,10 +401,22 @@ class PetProfile extends Component {
                 onClick={this.handleNap}
               />
               <div className="pet-stats">
-                <p><strong>Hunger:</strong> {this.state.hunger} / 50</p>
-                <p><strong>Happiness:</strong> {this.state.happiness} / 50</p>
-                <p><strong>Fun:</strong> {this.state.fun} / 50</p>
-                <p><strong>Energy:</strong> {this.state.energy} / 50</p>
+                <div>
+                  <p><strong>Hunger:</strong> {this.state.hungerMessage}</p>
+                  <p id="stats">{this.state.hunger} / 50</p>
+                </div>
+                <div>
+                  <p><strong>Happiness:</strong> {this.state.happinessMessage}</p>
+                  <p id="stats">{this.state.happiness} / 50</p>
+                </div>
+                <div>
+                  <p><strong>Fun:</strong> {this.state.funMessage}</p>
+                  <p id="stats">{this.state.fun} / 50</p>
+                </div>
+                <div>
+                  <p><strong>Energy:</strong> {this.state.energyMessage}</p>
+                  <p id="stats">{this.state.energy} / 50</p>
+                </div>
               </div>
 
               <div className="pet-container">
@@ -395,7 +431,6 @@ class PetProfile extends Component {
                       label="Buy for Pet"
                       type="nap"
                       primary={true}
-                      price="20"
                       style={style}
                       onClick={this.handleFood}
                     />
@@ -408,7 +443,6 @@ class PetProfile extends Component {
                       label="Buy for Pet"
                       type="nap"
                       primary={true}
-                      price="20"
                       style={style}
                       onClick={this.handleFood}
                     />
@@ -420,7 +454,6 @@ class PetProfile extends Component {
                     <RaisedButton
                       label="Buy for Pet"
                       type="nap"
-                      price="30"
                       primary={true}
                       style={style}
                       onClick={this.handleFun}
