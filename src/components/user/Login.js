@@ -35,6 +35,7 @@ class Login extends Component {
     axios.post(url, postData, axiosConfig)
       .then((res) => {
         console.log("RESPONSE RECEIVED: ", res);
+        ;debugger
         let token = res.data.jwt;
         localStorage.setItem('jwtToken', token);
         if(res.status === 201) {

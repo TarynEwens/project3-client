@@ -19,7 +19,7 @@ const muiTheme = getMuiTheme({
   flatButton: { primaryTextColor: "#5C67E1" }
 });
 
-const token = localStorage.getItem('jwtToken');
+const token = localStorage.jwtToken;
 
 const Routes = (
   <MuiThemeProvider muiTheme={getMuiTheme(muiTheme)}>

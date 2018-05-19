@@ -7,7 +7,6 @@ import css from './Nav.css'
 class Nav extends Component {
   _signOut() {
     localStorage.removeItem("jwtToken");
-    window.localStorage.clear('jwtToken');
   }
 
   render() {
