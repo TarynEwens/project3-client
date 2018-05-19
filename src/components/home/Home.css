@@ -14,18 +14,21 @@
 .home-scene1 {
   background-image: url('./images/greenhills.jpg');
   background-attachment: fixed;
+    background-repeat: no-repeat;
   height: 650px;
 }
 
 .home-scene2 {
   background-image: url('./images/nightforest.jpg');
   background-attachment: fixed;
+    background-repeat: no-repeat;
   height: 650px;
 }
 
 .home-scene3 {
   background-image: url('./images/summer.jpg');
   background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 650px;
 }
 
