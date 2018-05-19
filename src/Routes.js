@@ -10,6 +10,7 @@ import Login from './components/user/Login';
 import Nav from './components/header/Nav';
 import PetProfile from './components/pet/PetProfile';
 import Adopt from './components/pet/Adopt';
+import CheeseChase from './components/games/CheeseChase';
 
 const muiTheme = getMuiTheme({
   datePicker: {
@@ -43,9 +44,9 @@ const Routes = (
         )} />
         <Route exact path="/login" component={Login}/>
         <Route exact path="/signup" component={SignUp}/>
-        <Route exact path="/app" render={props => (
+        <Route exact path="/cheesechase" render={props => (
           token ? (
-            <App {...props} token={token}/>
+            <CheeseChase {...props} token={token}/>
           ) : (
             <Redirect to="/" />
           )

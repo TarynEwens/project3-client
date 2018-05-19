@@ -5,10 +5,9 @@ import Pug from './images/Pug_05.png';
 import Panda from './images/Panda_Groceries.png';
 import Kitty from './images/Kitty2.png';
 import Rat from './images/Rat_neutral.png';
+import Cheese from './images/Cheese.png';
 import Logo from './images/cheesepets-logo-large.png';
 import css from './Home.css';
-import { ParallaxProvider } from 'react-scroll-parallax';
-import { Parallax } from 'react-scroll-parallax';
 import { Link } from "react-router-dom";
 
 
@@ -67,12 +66,15 @@ class Home extends Component {
 
             <div className="home-cto">
             <Link to="/signup">
-              <button className= "signOutNav">Sign up</button>
+              <button className= "signInHome">Sign up</button>
             </Link>
               <h1 className="call-to-action">
 
-               to visit CheeseLand and <span>adopt</span> a CheesePet! </h1>
+               to visit CheeseLand and adopt a CheesePet! </h1>
               <p>Play games to find pieces of cheese and look after your pet!</p>
+              <Link to="/signup">
+                <img src={Cheese} className="home-cheese"/>
+              </Link>
             </div>
           </div>
         );

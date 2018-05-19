@@ -140,7 +140,7 @@ class PetProfile extends Component {
       }
 
     handleHug = async () =>  {
-      if (this.state.happiness < 50) {
+      if (this.state.happiness < 50 && this.state.energy > 2) {
         this.setState({
           happiness: this.state.happiness + 4,
           energy: this.state.energy - 2,
@@ -177,7 +177,7 @@ class PetProfile extends Component {
     }
 
     handleNap = async () =>  {
-      if (this.state.energy < 50) {
+      if (this.state.energy < 50 && this.state.hunger > 2) {
         this.setState({
           energy: this.state.energy + 4,
           hunger: this.state.hunger - 2,

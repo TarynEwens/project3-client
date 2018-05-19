@@ -13,8 +13,6 @@ class Login extends Component {
       password: "",
       redirect: false
     };
-
-
   }
 
   handleClick = () => {
@@ -42,6 +40,7 @@ class Login extends Component {
         if(res.status === 201) {
           this.setState({redirect: true})
           console.log(this.state.redirect);
+          this.props.history.push("/petprofile");
         }
       })
       .catch((err) => {
@@ -49,12 +48,6 @@ class Login extends Component {
           alert("Check your email or password!")
         };
       })
-
-
-  }
-
-  goToNextPage = () => {
-    this.props.history.push('/petprofile');
   }
 
   render() {

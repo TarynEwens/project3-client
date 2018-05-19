@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import logo from './images/cheesepets-logo-small.png'
 import css from './Nav.css'
 
-// const signOut = function () {
-
-// }
 
 class Nav extends Component {
   _signOut() {
     localStorage.removeItem("jwtToken");
+    window.localStorage.clear('jwtToken');
   }
 
   render() {
@@ -22,12 +20,11 @@ class Nav extends Component {
           </Link>
           <Link to ="#"></Link>
 
-          {/* need to make this not display when on venues page */}
-
           {window.localStorage.jwtToken ? (
             <div>
             <Link to = "/petprofile" className="navLinkHelp">Your Pet</Link>
             <Link to = "/editprofile" className="navLinkHelp">Settings</Link>
+            <Link to = "/cheesechase" className="navLinkHelp">Game</Link>
             <Link to ="#"></Link>
             <Link to="/">
               <button className= "signOutNav" onClick={this._signOut}>Sign out</button>

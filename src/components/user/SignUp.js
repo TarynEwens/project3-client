@@ -30,6 +30,7 @@ class SignUp extends Component {
         "Access-Control-Allow-Origin": "*"
       }
     };
+
     console.log("requesting");
     axios
       .post(url, postData, axiosConfig)
@@ -51,7 +52,7 @@ class SignUp extends Component {
       })
       .catch(err => {
         if(err.message.includes("422")) {
-          alert("Password not matched!")
+          alert("Sorry, something went wrong. Try again!")
         };
       });
   };
@@ -99,8 +100,6 @@ class SignUp extends Component {
             onClick={this.handleClick}
           />
         </div>
-        <p>Must be over 18 years of age.</p>
-        <p>By signing up you agree to our <a href="#">Terms & Conditions</a></p>.
         <p>{this.state.success}</p>
 
       </div>

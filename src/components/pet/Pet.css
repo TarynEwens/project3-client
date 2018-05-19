@@ -18,6 +18,10 @@ img.pet-profile {
   min-height: 100vh;
 }
 
+.adopt-container {
+  background-image: url('../home/images/summer.jpg');
+}
+
 .pet-container {
   max-width: 960px;
   margin: 0 auto;
@@ -35,4 +39,12 @@ img.pet-profile {
 h1 {
   padding: 0;
   margin: 0;
+}
+
+ img.adopt-pet {
+   max-width: 100px;
+ }
+
+h4#name-pet {
+  margin: 2em auto 0 auto;
 }

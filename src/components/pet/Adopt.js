@@ -23,7 +23,7 @@ class Adopt extends Component {
     super(props);
     this.state = {
       name: "",
-      species: "",
+      species: "Click a pet to select",
       hunger: 50,
       happiness: 50,
       fun: 50,
@@ -115,8 +115,8 @@ class Adopt extends Component {
 
 
         return (
-          <div>
-            <div>
+          <div className="container adopt-container">
+            <div className="pet-container">
 
               <form onSubmit={this._handleSubmit}>
 
@@ -125,15 +125,15 @@ class Adopt extends Component {
                 </div>
 
                   <h4>Choose a Pet</h4>
-                  <img src={pug} name="Pug" alt="Pug Puppy" onClick={this._imageClick} />
-                  <img src={axolotl} name="Axolotl" alt="Axolotl" onClick={this._imageClick} />
-                  <img src={panda} name="Panda" alt="Busy Panda" onClick={this._imageClick} />
-                  <img src={rat} name="Rat" alt="Rat" onClick={this._imageClick} />
-                  <img src={kitty} name="Kitty" alt="Unicorn Kitty" onClick={this._imageClick} />
+                  <img src={pug} name="Pug" alt="Pug Puppy" className="adopt-pet" onClick={this._imageClick} />
+                  <img src={axolotl} name="Axolotl" alt="Axolotl" className="adopt-pet" onClick={this._imageClick} />
+                  <img src={panda} name="Panda" alt="Busy Panda" className="adopt-pet" onClick={this._imageClick} />
+                  <img src={rat} name="Rat" alt="Rat" className="adopt-pet" onClick={this._imageClick} />
+                  <img src={kitty} name="Kitty" alt="Unicorn Kitty" className="adopt-pet" onClick={this._imageClick} />
 
 
                   <p><strong>Species:</strong> {this.state.species}</p>
-                  <h4>Name your Pet</h4>
+                  <h4 id="name-pet">Name your Pet:</h4>
                 <TextField
                   id="name-field"
                   hintText="name"

@@ -77,10 +77,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.home-cto span {
-  text-transform: uppercase;
-}
-
 .home-cto p  {
   font-family: 'Roboto', sans-serif;
   margin-top: 0.2em;
@@ -103,7 +99,7 @@ p {
 }
 
 #home-pug {
-  animation: moveInRight 3s ease-out;
+  animation: moveInRight 2s ease-out;
   transform: translateX(300px);
 }
 
@@ -124,6 +120,10 @@ p {
 
 #home-kitty {
 margin-left: 20px;
+}
+
+.home-cheese {
+max-width: 75px;
 }
 
 a {
@@ -148,7 +148,7 @@ p {
 
 @keyframes moveInRight {
   0% {
-    transform: translateX(1000px);
+    transform: translateX(450px);
   }
 
   100% {
@@ -156,17 +156,17 @@ p {
   }
 }
 
-.signOutNav{
+.signInHome{
   margin-left: -39px;
   border: none;
   background-color: rgb(0, 188, 212);
   padding: .5em 1em;
   border-radius: 3px;
   color: white;
-  font-size: 20px;
+  font-size: 24px;
 }
 
-.signOutNav:hover{
+.signInHome:hover{
   margin-left: -39px;
   border: none;
   background-color: lightgrey;
