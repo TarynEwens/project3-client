@@ -14,6 +14,7 @@ img.pet-profile {
 .container {
   background-image: url('../home/images/greenhills.jpg');
   background-attachment: fixed;
+  background-size: auto 100%;
   margin: 0;
   padding: 4em;
   min-height: 100vh;

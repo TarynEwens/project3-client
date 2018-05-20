@@ -25,6 +25,7 @@ import PugNap from './images/Pug/Pug_nap.png';
 import Burger from './images/Items/Burger.png';
 import HotDog from './images/Items/Hot_Dog.png';
 import SoccerBall from './images/Items/Soccer_Ball.png';
+import Cheese from './images/Items/Cheese.png'
 
 const style = {
   margin: 15
@@ -115,44 +116,44 @@ class PetProfile extends Component {
           }
           this.imageState();
 
-          if (this.state.hunger > 40) {
-            this.setState({hungerMessage: "Full"})
-          } else if (this.state.hunger < 40) {
-            this.setState({hungerMessage: "Peckish"})
+          if (this.state.hunger < 12) {
+            this.setState({hungerMessage: "Starving"})
           } else if (this.state.hunger < 30) {
             this.setState({hungerMessage: "Hungry"})
-          } else if (this.state.hunger < 12) {
-            this.setState({hungerMessage: "Starving"})
+          } else if (this.state.hunger < 40) {
+            this.setState({hungerMessage: "Peckish"})
+          } else if (this.state.hunger > 40) {
+            this.setState({hungerMessage: "Full"})
           }
 
-          if (this.state.happiness > 40) {
-            this.setState({happinessMessage: "Happy"})
-          } else if (this.state.happiness < 40) {
-            this.setState({happinessMessage: "Content"})
+          if (this.state.happiness < 12) {
+            this.setState({happinessMessage: "Miserable"})
           } else if (this.state.happiness < 30) {
             this.setState({happinessMessage: "Lonely"})
-          } else if (this.state.happiness < 12) {
-            this.setState({happinessMessage: "Miserable"})
+          } else if (this.state.happiness < 40) {
+            this.setState({happinessMessage: "Content"})
+          } else if (this.state.happiness > 40) {
+            this.setState({happinessMessage: "Happy"})
           }
 
-          if (this.state.fun > 40) {
-            this.setState({funMessage: "Excited"})
-          } else if (this.state.fun < 40) {
-            this.setState({funMessage: "Amused"})
+          if (this.state.fun < 12) {
+            this.setState({funMessage: "Bored"})
           } else if (this.state.fun < 30) {
             this.setState({funMessage: "Chill"})
-          } else if (this.state.fun < 12) {
-            this.setState({funMessage: "Bored"})
+          } else if (this.state.fun < 40) {
+            this.setState({funMessage: "Amused"})
+          } else if (this.state.fun > 40) {
+            this.setState({funMessage: "Excited"})
           }
 
-          if (this.state.energy > 40) {
-            this.setState({energyMessage: "Hyper"})
-          } else if (this.state.energy < 40) {
-            this.setState({energyMessage: "Average"})
+          if (this.state.energy < 12) {
+            this.setState({energyMessage: "Exhausted"})
           } else if (this.state.energy < 30) {
             this.setState({energyMessage: "Tired"})
-          } else if (this.state.energy < 12) {
-            this.setState({energyMessage: "Exhausted"})
+          } else if (this.state.energy < 40) {
+            this.setState({energyMessage: "Average"})
+          } else if (this.state.energy > 40) {
+            this.setState({energyMessage: "Hyper"})
           }
 
         });
@@ -325,7 +326,7 @@ class PetProfile extends Component {
     handleFood = async () =>  {
       if (this.state.hunger < 48 && this.state.energy > 2 && this.state.points > 20) {
         this.setState({
-          energy: this.state.energy - 2,
+          energy: this.state.energy - 1,
           hunger: this.state.hunger + 4,
           points: this.state.points - 20,
           action: "hunger",
