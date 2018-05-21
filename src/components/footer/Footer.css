@@ -1,0 +1,35 @@
+footer {
+  height:100%;
+  background-color: #00c1d8;
+  margin: 0;
+  padding: 2em 0 0 0;
+  color: #333333;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.links a {
+  margin: 0 2em 0 2em;
+}
+
+.socials img {
+  margin: 0 1em;
+}
+
+.lightFont {
+  font-weight: lighter;
+}
+
+.footerLink {
+  color: #333333;
+}
+
+.footer-small {
+  margin: 2em auto;
+  font-size: 0.8em;
+}

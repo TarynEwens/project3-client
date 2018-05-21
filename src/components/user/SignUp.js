@@ -19,8 +19,6 @@ class SignUp extends Component {
 
   handleClick = () => {
     let url = "https://cheesepets-db.herokuapp.com/users.json";
-    console.log("clicked");
-    console.log(this.state.username, this.state.email, this.state.password, this.state.password_confirmation);
     let postData = {
       username: this.state.username,
       email: this.state.email,
@@ -36,8 +34,6 @@ class SignUp extends Component {
         "Access-Control-Allow-Origin": "*"
       }
     };
-
-    console.log("requesting");
     axios
       .post(url, postData, axiosConfig)
       .then(() => {

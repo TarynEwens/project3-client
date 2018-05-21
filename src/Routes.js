@@ -8,6 +8,7 @@ import SignUp from './components/user/SignUp';
 import EditProfile from './components/user/EditProfile';
 import Login from './components/user/Login';
 import Nav from './components/header/Nav';
+import Footer from './components/footer/Footer';
 import PetProfile from './components/pet/PetProfile';
 import Adopt from './components/pet/Adopt';
 import RPS from './components/games/RockPaperScissors.js';
@@ -51,6 +52,7 @@ const Routes = (
         )} />
 
       </Switch>
+      <Footer />
     </React.Fragment>
   </Router>
   </MuiThemeProvider>

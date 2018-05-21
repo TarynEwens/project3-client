@@ -36,7 +36,6 @@ class RPS extends Component {
   fetchUser = () => {
     // Fat arrow functions do not break the connection to this
     const user = jwtDecoder(window.localStorage.jwtToken);
-    console.log(user);
     axios({
       url: `https://cheesepets-db.herokuapp.com/users/${user.sub}.json`,
       method: "get",
@@ -77,7 +76,6 @@ class RPS extends Component {
 			if(counter > 20) {
 				clearInterval(myInterval)
         this.setState({cheese: Math.floor(Math.random() * 100) + 1 })
-        console.log(this.state.cheese);
 				this.setState({winner: this.decideWinner()})
 			}
 		},100)
@@ -85,15 +83,12 @@ class RPS extends Component {
 	}
 
   sendReward = () => {
-    console.log(this.state.points);
-    console.log(this.state.user);
     if (this.state.win === true) {
       const user = jwtDecoder(window.localStorage.jwtToken);
 
       let url = `https://cheesepets-db.herokuapp.com/users/${
         user.sub
       }.json`;
-      console.log(url);
 
       axios({
         url: url,
@@ -105,7 +100,6 @@ class RPS extends Component {
           points: this.state.points + this.state.cheese
         }
       })
-      console.log("points rewarded");
     }
   }
 
