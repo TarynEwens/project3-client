@@ -22,8 +22,8 @@ class Nav extends Component {
           {window.localStorage.jwtToken ? (
             <div>
             <Link to = "/petprofile" className="navLinkHelp">Your Pet</Link>
+            <Link to = "/rps" className="navLinkHelp">Find Cheese</Link>
             <Link to = "/editprofile" className="navLinkHelp">Settings</Link>
-            <Link to = "/rps" className="navLinkHelp">Game</Link>
 
             <Link to="/">
               <button className= "signOutNav" onClick={this._signOut}>Sign out</button>

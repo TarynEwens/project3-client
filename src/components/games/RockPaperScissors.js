@@ -20,7 +20,7 @@ class RPS extends Component {
 
 	constructor(props) {
 		super(props)
-		this.symbols = ["rock" , "paper", "scissors"]
+		this.symbols = ["pug" , "rat", "kitty"]
 		this.state = {
       cheese: "",
       user: "",
@@ -54,9 +54,9 @@ class RPS extends Component {
 		if(player == computer) {
 			return "It's a draw. No cheese for you."
 		}
-		if((player==="rock" && computer==="scissors") ||
-			(player==="paper" && computer==="rock") ||
-			(player==="scissors" && computer==="paper")) {
+		if((player==="pug" && computer==="kitty") ||
+			(player==="rat" && computer==="pug") ||
+			(player==="kitty" && computer==="rat")) {
       this.setState({win: true})
       this.sendReward();
 			return `Woohoo! You won ${this.state.cheese} pieces of cheese!`
@@ -122,13 +122,13 @@ class RPS extends Component {
               <div className="card">
               <h3>Player</h3>
         				<PlayerCard
-        					color="#3D9BA3"
+        					
         					symbol={this.state.player}   />
               </div>
               <div className="card">
               <h3>Computer</h3>
       				<PlayerCard
-      					color="#A95CAD"
+
       					symbol={this.state.computer}   />
               </div>
             </div>
