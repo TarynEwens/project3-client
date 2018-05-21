@@ -43,6 +43,9 @@ img.pet-profile {
   justify-content: space-between;
   text-align: left;
   margin: 0 auto;
+  background-color: rgba(255,255,255,0.8);
+  margin-bottom: 1em;
+  padding: 1em 1em 0 1em;
 }
 
 .pet-stats div {
@@ -83,4 +86,24 @@ h4#name-pet {
 
 .all-item-container h2 {
   display: block;
+}
+
+.red {
+  color: red;
+  font-weight: 700;
+}
+
+.green {
+  color: #41c40d;
+  font-weight: 700;
+}
+
+.orange {
+  color: #fc9c02;
+  font-weight: 700;
+}
+
+.blue {
+  color: #2da0ad;
+  font-weight: 700;
 }

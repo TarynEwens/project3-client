@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import jwtDecoder from "jwt-decode";
 import CircularProgress from "material-ui/CircularProgress";
 import pug from './images/Pug/Pug_neutral.png';
-import panda from './images/Panda/Panda_neutral.png';
 import rat from './images/Rat/Rat_neutral.png';
 import kitty from './images/Kitty/Kitty_neutral.png';
 import axolotl from './images/Axolotl/Axolotl_neutral.png';
@@ -127,7 +126,6 @@ class Adopt extends Component {
                   <h4>Choose a Pet</h4>
                   <img src={pug} name="Pug" alt="Pug Puppy" className="adopt-pet" onClick={this._imageClick} />
                   <img src={axolotl} name="Axolotl" alt="Axolotl" className="adopt-pet" onClick={this._imageClick} />
-                  <img src={panda} name="Panda" alt="Busy Panda" className="adopt-pet" onClick={this._imageClick} />
                   <img src={rat} name="Rat" alt="Rat" className="adopt-pet" onClick={this._imageClick} />
                   <img src={kitty} name="Kitty" alt="Unicorn Kitty" className="adopt-pet" onClick={this._imageClick} />
 

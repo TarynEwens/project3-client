@@ -1,0 +1,10 @@
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cheese-chase-canvas {
+  border: 1px solid black;
+  background-image: url("./images/background-poly.png")
+}

@@ -162,9 +162,10 @@ class EditProfile extends Component {
               style={style}
             />
           </form>
+          <p>{this.state.success}</p>
         </div>
 
-        <p>{this.state.success}</p>
+
 
       </div>
     );

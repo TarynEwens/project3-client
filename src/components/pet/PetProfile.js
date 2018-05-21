@@ -22,6 +22,18 @@ import PugFun from './images/Pug/Pug_fun.png';
 import PugHappiness from './images/Pug/Pug_happiness.png';
 import PugNap from './images/Pug/Pug_nap.png';
 
+import KittyNeutral from './images/Kitty/Kitty_neutral.png';
+import KittyHunger from './images/Kitty/Kitty_hunger.png';
+import KittyFun from './images/Kitty/Kitty_fun.png';
+import KittyHappiness from './images/Kitty/Kitty_happiness.png';
+import KittyNap from './images/Kitty/Kitty_nap.png';
+
+import RatNeutral from './images/Rat/Rat_neutral.png';
+import RatHunger from './images/Rat/Rat_hunger.png';
+import RatFun from './images/Rat/Rat_fun.png';
+import RatHappiness from './images/Rat/Rat_happiness.png';
+import RatNap from './images/Rat/Rat_nap.png';
+
 import Burger from './images/Items/Burger.png';
 import HotDog from './images/Items/Hot_Dog.png';
 import SoccerBall from './images/Items/Soccer_Ball.png';
@@ -57,7 +69,11 @@ class PetProfile extends Component {
       hungerMessage: "",
       happinessMessage: "",
       funMessage: "",
-      energyMessage:""
+      energyMessage:"",
+      hungerClassName: "",
+      happinessClassName: "",
+      funClassName: "",
+      energyClassName: ""
     }
   }
 
@@ -117,43 +133,43 @@ class PetProfile extends Component {
           this.imageState();
 
           if (this.state.hunger < 12) {
-            this.setState({hungerMessage: "Starving"})
+            this.setState({hungerMessage: "Starving", hungerClassName: "red"})
           } else if (this.state.hunger < 30) {
-            this.setState({hungerMessage: "Hungry"})
+            this.setState({hungerMessage: "Hungry", hungerClassName: "orange"})
           } else if (this.state.hunger < 40) {
-            this.setState({hungerMessage: "Peckish"})
+            this.setState({hungerMessage: "Peckish", hungerClassName: "blue"})
           } else if (this.state.hunger > 40) {
-            this.setState({hungerMessage: "Full"})
+            this.setState({hungerMessage: "Full", hungerClassName: "green"})
           }
 
           if (this.state.happiness < 12) {
-            this.setState({happinessMessage: "Miserable"})
+            this.setState({happinessMessage: "Miserable", happinessClassName: "red"})
           } else if (this.state.happiness < 30) {
-            this.setState({happinessMessage: "Lonely"})
+            this.setState({happinessMessage: "Lonely", happinessClassName: "orange"})
           } else if (this.state.happiness < 40) {
-            this.setState({happinessMessage: "Content"})
+            this.setState({happinessMessage: "Content", happinessClassName: "blue"})
           } else if (this.state.happiness > 40) {
-            this.setState({happinessMessage: "Happy"})
+            this.setState({happinessMessage: "Happy", happinessClassName: "green"})
           }
 
           if (this.state.fun < 12) {
-            this.setState({funMessage: "Bored"})
+            this.setState({funMessage: "Bored", funClassName: "red"})
           } else if (this.state.fun < 30) {
-            this.setState({funMessage: "Chill"})
+            this.setState({funMessage: "Chill", funClassName: "orange"})
           } else if (this.state.fun < 40) {
-            this.setState({funMessage: "Amused"})
+            this.setState({funMessage: "Amused", funClassName: "blue"})
           } else if (this.state.fun > 40) {
-            this.setState({funMessage: "Excited"})
+            this.setState({funMessage: "Excited", funClassName: "green"})
           }
 
           if (this.state.energy < 12) {
-            this.setState({energyMessage: "Exhausted"})
+            this.setState({energyMessage: "Exhausted", energyClassName: "red"})
           } else if (this.state.energy < 30) {
-            this.setState({energyMessage: "Tired"})
+            this.setState({energyMessage: "Tired", energyClassName: "orange"})
           } else if (this.state.energy < 40) {
-            this.setState({energyMessage: "Average"})
+            this.setState({energyMessage: "Average", energyClassName: "blue"})
           } else if (this.state.energy > 40) {
-            this.setState({energyMessage: "Hyper"})
+            this.setState({energyMessage: "Hyper", energyClassName: "green"})
           }
 
         });
@@ -172,9 +188,8 @@ class PetProfile extends Component {
         } else if (this.state.species === "Axolotl" && this.state.action === "nap") {
           this.setState({image: AxolotlNap})
         }
-        //
-        // Pug
 
+        // Pug
         if (this.state.species === "Pug" && this.state.action === "neutral") {
           this.setState({image: PugNeutral})
         } else if (this.state.species === "Pug" && this.state.action === "hunger") {
@@ -185,6 +200,32 @@ class PetProfile extends Component {
           this.setState({image: PugHappiness})
         } else if (this.state.species === "Pug" && this.state.action === "nap") {
           this.setState({image: PugNap})
+        }
+
+        // Kitty
+        if (this.state.species === "Kitty" && this.state.action === "neutral") {
+          this.setState({image: KittyNeutral})
+        } else if (this.state.species === "Kitty" && this.state.action === "hunger") {
+          this.setState({image: KittyHunger})
+        } else if (this.state.species === "Kitty" && this.state.action === "fun") {
+          this.setState({image: KittyFun})
+        } else if (this.state.species === "Kitty" && this.state.action === "happiness") {
+          this.setState({image: KittyHappiness})
+        } else if (this.state.species === "Kitty" && this.state.action === "nap") {
+          this.setState({image: KittyNap})
+        }
+
+        // Rat
+        if (this.state.species === "Rat" && this.state.action === "neutral") {
+          this.setState({image: RatNeutral})
+        } else if (this.state.species === "Rat" && this.state.action === "hunger") {
+          this.setState({image: RatHunger})
+        } else if (this.state.species === "Rat" && this.state.action === "fun") {
+          this.setState({image: RatFun})
+        } else if (this.state.species === "Rat" && this.state.action === "happiness") {
+          this.setState({image: RatHappiness})
+        } else if (this.state.species === "Rat" && this.state.action === "nap") {
+          this.setState({image: RatNap})
         }
 
       }
@@ -403,19 +444,19 @@ class PetProfile extends Component {
               />
               <div className="pet-stats">
                 <div>
-                  <p><strong>Hunger:</strong> {this.state.hungerMessage}</p>
+                  <p><strong>Hunger:</strong> <span className={this.state.hungerClassName}>{this.state.hungerMessage}</span></p>
                   <p id="stats">{this.state.hunger} / 50</p>
                 </div>
                 <div>
-                  <p><strong>Happiness:</strong> {this.state.happinessMessage}</p>
+                  <p><strong>Happiness:</strong> <span className={this.state.happinessClassName}>{this.state.happinessMessage}</span></p>
                   <p id="stats">{this.state.happiness} / 50</p>
                 </div>
                 <div>
-                  <p><strong>Fun:</strong> {this.state.funMessage}</p>
+                  <p><strong>Fun:</strong> <span className={this.state.funClassName}>{this.state.funMessage}</span></p>
                   <p id="stats">{this.state.fun} / 50</p>
                 </div>
                 <div>
-                  <p><strong>Energy:</strong> {this.state.energyMessage}</p>
+                  <p><strong>Energy:</strong> <span className={this.state.energyClassName}>{this.state.energyMessage}</span></p>
                   <p id="stats">{this.state.energy} / 50</p>
                 </div>
               </div>
