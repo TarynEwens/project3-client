@@ -75,7 +75,7 @@ class RPS extends Component {
 			})
 			if(counter > 20) {
 				clearInterval(myInterval)
-        this.setState({cheese: Math.floor(Math.random() * 100) + 1 })
+        this.setState({cheese: Math.floor(Math.random() * 100) + 2 })
 				this.setState({winner: this.decideWinner()})
 			}
 		},100)
@@ -100,6 +100,7 @@ class RPS extends Component {
           points: this.state.points + this.state.cheese
         }
       })
+			console.log("patch finished");
     }
   }
 
