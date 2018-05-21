@@ -309,7 +309,7 @@ class PetProfile extends Component {
     }
 
     handleFun = async () =>  {
-      if (this.state.fun < 48 && this.state.hunger > 2 && this.state.points > 30) {
+      if (this.state.fun < 48 && this.state.hunger > 2 && this.state.points >= 30) {
         this.setState({
           fun: this.state.fun + 4,
           hunger: this.state.hunger - 2,
@@ -317,7 +317,10 @@ class PetProfile extends Component {
           action: "fun",
           statement: "\"This is so fun! I love balls!\""
         })
-
+      } if (this.state.points < 30) {
+        this.setState({
+          statement: "We can't afford that. You need to get more cheese."
+        })
       } else {
         this.setState({
           action: "neutral",
@@ -365,13 +368,17 @@ class PetProfile extends Component {
 
 
     handleFood = async () =>  {
-      if (this.state.hunger < 48 && this.state.energy > 2 && this.state.points > 20) {
+      if (this.state.hunger < 48 && this.state.energy > 2 && this.state.points >= 20) {
         this.setState({
           energy: this.state.energy - 1,
           hunger: this.state.hunger + 4,
           points: this.state.points - 20,
           action: "hunger",
           statement: "\"Oh yum! I love this food!\""
+        })
+      } if (this.state.points < 20) {
+        this.setState({
+          statement: "We can't afford that. You need to get more cheese."
         })
       } else {
         this.setState({
