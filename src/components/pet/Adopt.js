@@ -60,7 +60,7 @@ class Adopt extends Component {
       _handleSubmit = e => {
         e.preventDefault();
         console.log(this.state.name, this.state.species);
-        const user = jwtDecoder(this.props.token);
+        const user = jwtDecoder(window.localStorage.jwtToken);
 
         let url = `https://cheesepets-db.herokuapp.com/pets.json`;
 
@@ -68,7 +68,7 @@ class Adopt extends Component {
           url: url,
           method: "post",
           headers: {
-            authorization: `Bearer ${this.props.token}`
+            authorization: `Bearer ${window.localStorage.jwtToken}`
           },
           data: {
             name: this.state.name,
