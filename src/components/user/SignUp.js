@@ -11,7 +11,10 @@ class SignUp extends Component {
     email: "",
     password: "",
     password_confirmation: "",
-    success: ""
+    success: "",
+    points: 0,
+    location: "CheeseLand"
+
   };
 
   handleClick = () => {
@@ -22,7 +25,9 @@ class SignUp extends Component {
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
-      password_confirmation: this.state.password_confirmation
+      password_confirmation: this.state.password_confirmation,
+      points: this.state.points,
+      location: this.state.location
     };
 
     let axiosConfig = {

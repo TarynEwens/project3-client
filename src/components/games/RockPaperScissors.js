@@ -46,7 +46,7 @@ class RPS extends Component {
     }).then(res => this.setState({
       user: res.data,
       points: res.data.points
-      }));
+		}));
   };
 
 	decideWinner = ()=> {
@@ -117,6 +117,7 @@ class RPS extends Component {
             <h2>Play "Pug, Rat, Kitty"</h2>
             <p>Its like "Rock, Paper, Scissors" ... except Pug scares Kitty, Rat scares Pug, and Kitty scares Rat!</p>
             <p>Each win will reward you with cheese - how much cheese will you win?</p>
+            <p>Click the play button to begin!</p>
             <div className="card-container">
               <div className="card">
               <h3>Player</h3>

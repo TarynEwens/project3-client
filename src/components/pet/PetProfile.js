@@ -123,13 +123,6 @@ class PetProfile extends Component {
           energy: res.data.energy,
         }))
         .then(() => {
-          if (this.state.location === null) {
-            this.setState({ location: "CheeseLand"})
-          }
-
-          if (this.state.bio === null) {
-            this.setState({ bio: "A cool person."})
-          }
           this.imageState();
 
           if (this.state.hunger < 12) {
