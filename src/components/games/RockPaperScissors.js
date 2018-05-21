@@ -111,7 +111,7 @@ class RPS extends Component {
 
 	render() {
 		return (
-      <div className="container form-container">
+      <div className="container game-container">
         <div className="pet-container">
     			<div className="App">
             <h2>Play "Pug, Rat, Kitty"</h2>

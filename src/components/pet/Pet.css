@@ -22,12 +22,10 @@ img.pet-profile {
 
 .adopt-container {
   background-image: url('../home/images/summer.jpg');
-  background-attachment: fixed;
 }
 
 .form-container {
   background-image: url('../home/images/nightforest.jpg');
-  background-attachment: fixed;
 }
 
 .pet-container {
@@ -36,6 +34,10 @@ img.pet-profile {
   padding: 2em;
   background-color: rgba(255,255,255,0.8);
   text-align: center;
+}
+
+.game-container {
+  background-image: url('../home/images/summer.jpg');
 }
 
 .pet-stats {
