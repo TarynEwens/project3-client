@@ -123,6 +123,9 @@ class PetProfile extends Component {
           energy: res.data.energy,
         }))
         .then(() => {
+          if (this.state.bio === null) {
+            this.setState({ bio: "A cool person."})
+          }
           this.imageState();
 
           if (this.state.hunger < 12) {
@@ -310,7 +313,7 @@ class PetProfile extends Component {
           action: "fun",
           statement: "\"This is so fun! I love balls!\""
         })
-      } if (this.state.points < 30) {
+      } else if (this.state.points < 30) {
         this.setState({
           statement: "We can't afford that. You need to get more cheese."
         })
@@ -369,7 +372,7 @@ class PetProfile extends Component {
           action: "hunger",
           statement: "\"Oh yum! I love this food!\""
         })
-      } if (this.state.points < 20) {
+      } else if (this.state.points < 20) {
         this.setState({
           statement: "We can't afford that. You need to get more cheese."
         })
