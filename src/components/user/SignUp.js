@@ -1,4 +1,4 @@
-import React, { PureComponent as Component } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import RaisedButton from "material-ui/RaisedButton";
@@ -47,7 +47,8 @@ class SignUp extends Component {
             }
           }
         }).then(async (res) => {
-          await localStorage.setItem("jwtToken", res.jwt);
+          console.log(res.data.jwt);
+          await localStorage.setItem("jwtToken", res.data.jwt);
           this.props.history.push("/adopt");
         });
       })

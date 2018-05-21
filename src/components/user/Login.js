@@ -39,23 +39,19 @@ class Login extends Component {
       .then((res) => {
         console.log("RESPONSE RECEIVED: ", res);
         let token = res.data.jwt;
+        console.log(token);
         localStorage.setItem('jwtToken', token);
-        if(res.status === 201) {
-          this.setState({redirect: true})
-          console.log(this.state.redirect);
-        }
+        this.setState({redirect: true})
+        console.log(window.localStorage.jwtToken);
       })
       .catch((err) => {
         if(err) {
-          alert("Check your email or password!")
+          this.setState({alert: "Check your email or password!"})
         };
       })
-
   }
 
-  goToHomePage = () => {
-    this.props.history.push('/');
-  }
+
 
   render() {
     return (
@@ -89,12 +85,11 @@ class Login extends Component {
             />
             <p>{this.state.alert}</p>
           </div>
-
-        {this.state.redirect ? <Redirect to='/petprofile'/>:null}
-        <br />
+          {this.state.redirect ? <Redirect to='/petprofile'/>:null}
       </div>
     );
   }
+
 }
 const style = {
   margin: 15

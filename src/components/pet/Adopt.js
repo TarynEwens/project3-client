@@ -40,13 +40,13 @@ class Adopt extends Component {
 
       fetchUser = () => {
         // Fat arrow functions do not break the connection to this
-        const user = jwtDecoder(this.props.token);
+        const user = jwtDecoder(window.localStorage.jwtToken);
         console.log(user);
         axios({
           url: `https://cheesepets-db.herokuapp.com/users/${user.sub}.json`,
           method: "get",
           headers: {
-            authorization: `Bearer ${this.props.token}`
+            authorization: `Bearer ${window.localStorage.jwtToken}`
           }
         }).then(res => this.setState({
           user: res.data,
