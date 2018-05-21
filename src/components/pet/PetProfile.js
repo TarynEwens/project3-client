@@ -83,13 +83,13 @@ class PetProfile extends Component {
 
       fetchUser = () => {
         // Fat arrow functions do not break the connection to this
-        const user = jwtDecoder(this.props.token);
+        const user = jwtDecoder(window.localStorage.jwtToken);
 
         axios({
           url: `https://cheesepets-db.herokuapp.com/users/${user.sub}.json`,
           method: "get",
           headers: {
-            authorization: `Bearer ${this.props.token}`
+            authorization: `Bearer ${window.localStorage.jwtToken}`
           }
         }).then(res => this.setState({
           user: res.data,
@@ -106,12 +106,12 @@ class PetProfile extends Component {
 
       fetchPet = () => {
         // Fat arrow functions do not break the connection to this
-        const user = jwtDecoder(this.props.token);
+        const user = jwtDecoder(window.localStorage.jwtToken);
         axios({
           url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
           method: "get",
           headers: {
-            authorization: `Bearer ${this.props.token}`
+            authorization: `Bearer ${window.localStorage.jwtToken}`
           }
         }).then(res => this.setState({
           pet: res.data,
@@ -250,7 +250,7 @@ class PetProfile extends Component {
         url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
         method: "patch",
         headers: {
-          authorization: `Bearer ${this.props.token}`
+          authorization: `Bearer ${window.localStorage.jwtToken}`
         },
         data: {
           happiness: this.state.happiness,
@@ -291,7 +291,7 @@ class PetProfile extends Component {
         url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
         method: "patch",
         headers: {
-          authorization: `Bearer ${this.props.token}`
+          authorization: `Bearer ${window.localStorage.jwtToken}`
         },
         data: {
           energy: this.state.energy,
@@ -329,7 +329,7 @@ class PetProfile extends Component {
         url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
         method: "patch",
         headers: {
-          authorization: `Bearer ${this.props.token}`
+          authorization: `Bearer ${window.localStorage.jwtToken}`
         },
         data: {
           fun: this.state.fun,
@@ -342,7 +342,7 @@ class PetProfile extends Component {
           url: `https://cheesepets-db.herokuapp.com/users/${this.state.user.id}.json`,
           method: "patch",
           headers: {
-            authorization: `Bearer ${this.props.token}`
+            authorization: `Bearer ${window.localStorage.jwtToken}`
           },
           data: {
             points: this.state.points
@@ -384,7 +384,7 @@ class PetProfile extends Component {
         url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
         method: "patch",
         headers: {
-          authorization: `Bearer ${this.props.token}`
+          authorization: `Bearer ${window.localStorage.jwtToken}`
         },
         data: {
           energy: this.state.energy,
@@ -396,7 +396,7 @@ class PetProfile extends Component {
           url: `https://cheesepets-db.herokuapp.com/users/${this.state.user.id}.json`,
           method: "patch",
           headers: {
-            authorization: `Bearer ${this.props.token}`
+            authorization: `Bearer ${window.localStorage.jwtToken}`
           },
           data: {
             points: this.state.points

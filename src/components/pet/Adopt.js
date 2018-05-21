@@ -23,10 +23,10 @@ class Adopt extends Component {
     this.state = {
       name: "",
       species: "Click a pet to select",
-      hunger: 50,
-      happiness: 50,
-      fun: 50,
-      energy: 50,
+      hunger: 10,
+      happiness: 10,
+      fun: 10,
+      energy: 40,
       success: "",
       redirect: false
     }
@@ -39,13 +39,13 @@ class Adopt extends Component {
 
       fetchUser = () => {
         // Fat arrow functions do not break the connection to this
-        const user = jwtDecoder(this.props.token);
+        const user = jwtDecoder(window.localStorage.jwtToken);
         console.log(user);
         axios({
           url: `https://cheesepets-db.herokuapp.com/users/${user.sub}.json`,
           method: "get",
           headers: {
-            authorization: `Bearer ${this.props.token}`
+            authorization: `Bearer ${window.localStorage.jwtToken}`
           }
         }).then(res => this.setState({
           user: res.data,
@@ -59,7 +59,7 @@ class Adopt extends Component {
       _handleSubmit = e => {
         e.preventDefault();
         console.log(this.state.name, this.state.species);
-        const user = jwtDecoder(this.props.token);
+        const user = jwtDecoder(window.localStorage.jwtToken);
 
         let url = `https://cheesepets-db.herokuapp.com/pets.json`;
 
@@ -67,7 +67,7 @@ class Adopt extends Component {
           url: url,
           method: "post",
           headers: {
-            authorization: `Bearer ${this.props.token}`
+            authorization: `Bearer ${window.localStorage.jwtToken}`
           },
           data: {
             name: this.state.name,
