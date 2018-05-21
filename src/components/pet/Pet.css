@@ -42,7 +42,7 @@ img.pet-profile {
 
 .pet-stats {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: left;
   margin: 0 auto;
   background-color: rgba(255,255,255,0.8);
