@@ -76,7 +76,7 @@ class RPS extends Component {
 			})
 			if(counter > 20) {
 				clearInterval(myInterval)
-        this.setState({cheese: Math.floor(Math.random() * 100) })
+        this.setState({cheese: Math.floor(Math.random() * 100) + 1 })
         console.log(this.state.cheese);
 				this.setState({winner: this.decideWinner()})
 			}
@@ -122,7 +122,7 @@ class RPS extends Component {
               <div className="card">
               <h3>Player</h3>
         				<PlayerCard
-        					
+
         					symbol={this.state.player}   />
               </div>
               <div className="card">
