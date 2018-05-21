@@ -23,7 +23,8 @@ class Nav extends Component {
             <div>
             <Link to = "/petprofile" className="navLinkHelp">Your Pet</Link>
             <Link to = "/editprofile" className="navLinkHelp">Settings</Link>
-            <Link to = "/cheesechase" className="navLinkHelp">Game</Link>
+            <Link to = "/rps" className="navLinkHelp">Game</Link>
+
             <Link to="/">
               <button className= "signOutNav" onClick={this._signOut}>Sign out</button>
             </Link>

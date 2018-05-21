@@ -138,7 +138,7 @@ class PetProfile extends Component {
             this.setState({hungerMessage: "Hungry", hungerClassName: "orange"})
           } else if (this.state.hunger < 40) {
             this.setState({hungerMessage: "Peckish", hungerClassName: "blue"})
-          } else if (this.state.hunger > 40) {
+          } else if (this.state.hunger >= 40) {
             this.setState({hungerMessage: "Full", hungerClassName: "green"})
           }
 
@@ -148,7 +148,7 @@ class PetProfile extends Component {
             this.setState({happinessMessage: "Lonely", happinessClassName: "orange"})
           } else if (this.state.happiness < 40) {
             this.setState({happinessMessage: "Content", happinessClassName: "blue"})
-          } else if (this.state.happiness > 40) {
+          } else if (this.state.happiness >= 40) {
             this.setState({happinessMessage: "Happy", happinessClassName: "green"})
           }
 
@@ -158,7 +158,7 @@ class PetProfile extends Component {
             this.setState({funMessage: "Chill", funClassName: "orange"})
           } else if (this.state.fun < 40) {
             this.setState({funMessage: "Amused", funClassName: "blue"})
-          } else if (this.state.fun > 40) {
+          } else if (this.state.fun >= 40) {
             this.setState({funMessage: "Excited", funClassName: "green"})
           }
 
@@ -168,7 +168,7 @@ class PetProfile extends Component {
             this.setState({energyMessage: "Tired", energyClassName: "orange"})
           } else if (this.state.energy < 40) {
             this.setState({energyMessage: "Average", energyClassName: "blue"})
-          } else if (this.state.energy > 40) {
+          } else if (this.state.energy >= 40) {
             this.setState({energyMessage: "Hyper", energyClassName: "green"})
           }
 

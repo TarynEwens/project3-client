@@ -8,6 +8,7 @@
     "material-ui": "^0.20.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-game-kit": "^1.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
@@ -20,6 +21,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "html-loader": "^0.5.5"
+    "html-loader": "^0.5.5",
+    "html-to-react-loader": "^1.0.0-alpha.10"
   }
 }

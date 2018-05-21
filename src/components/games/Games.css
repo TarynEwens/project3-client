@@ -1,10 +1,48 @@
-.game {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* * {
+	background-color: #0bb;
+	font-family: sans-serif;
+	color: #fff;
 }
 
-#cheese-chase-canvas {
-  border: 1px solid black;
-  background-image: url("./images/background-poly.png")
+body {
+	width: 40rem;
+	border: 2px solid #088;
+	margin: 1rem auto;
+	display: flex;
+	justify-content: space-evenly;
+} */
+
+.player-card {
+	width: 12.5rem;
+	height: 12.5rem;
+	margin: 1.25rem;
+	border-radius: 50%;
+	background-color: #ddd;
+	text-align: center;
+	line-height: 12.5rem;
+	position: relative;
+	display: inline-block;
+	border: 2px solid #fff;
+	opacity: 1;
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+
+.player-card:nth-child(2) {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.game-cheese {
+  display: block;
+  margin: 1em auto;
 }
