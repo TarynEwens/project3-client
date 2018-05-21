@@ -24,10 +24,10 @@ class Adopt extends Component {
     this.state = {
       name: "",
       species: "Click a pet to select",
-      hunger: 50,
-      happiness: 50,
-      fun: 50,
-      energy: 50,
+      hunger: 10,
+      happiness: 10,
+      fun: 10,
+      energy: 40,
       success: "",
       redirect: false
     }
