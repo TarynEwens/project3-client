@@ -47,6 +47,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  text-align: left;
 }
 
 .home-paragraphs {
@@ -108,7 +109,7 @@ p {
 
 #home-axolotl {
   animation: moveInLeft 2s ease-out;
-  transform: translateY(150px);
+  transform: translateX(-150px) translateY(100px);
 }
 
 #home-panda {
@@ -145,7 +146,7 @@ p {
   }
 
   100% {
-    transform: translateY(150px);
+    transform: translateX(-150px) translateY(100px));
   }
 }
 
