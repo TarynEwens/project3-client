@@ -2,16 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import App from './components/App';
+import Nav from './components/header/Nav';
 import Home from './components/home/Home';
 import SignUp from './components/user/SignUp';
-import EditProfile from './components/user/EditProfile';
-import Login from './components/user/Login';
-import Nav from './components/header/Nav';
-import Footer from './components/footer/Footer';
-import PetProfile from './components/pet/PetProfile';
 import Adopt from './components/pet/Adopt';
+import Login from './components/user/Login';
+import EditProfile from './components/user/EditProfile';
+import PetProfile from './components/pet/PetProfile';
 import RPS from './components/games/RockPaperScissors.js';
+import Footer from './components/footer/Footer';
+
 
 const muiTheme = getMuiTheme({
   datePicker: {

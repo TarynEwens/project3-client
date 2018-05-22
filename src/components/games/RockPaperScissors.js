@@ -34,7 +34,6 @@ class RPS extends Component {
   };
 
   fetchUser = () => {
-    // Fat arrow functions do not break the connection to this
     const user = jwtDecoder(window.localStorage.jwtToken);
     axios({
       url: `https://cheesepets-db.herokuapp.com/users/${user.sub}.json`,
@@ -110,8 +109,8 @@ class RPS extends Component {
         <div className="pet-container">
     			<div className="App">
             <h2>Play "Pug, Rat, Kitty"</h2>
-            <p>Its like "Rock, Paper, Scissors" ... except Pug scares Kitty, Rat scares Pug, and Kitty scares Rat!</p>
-            <p>Each win will reward you with cheese - how much cheese will you win?</p>
+            <p>Its like "Rock, Paper, Scissors" ... can you guess which pet would win?</p>
+            <p>Each win will reward you with cheese, but how much?</p>
             <p>Click the play button to begin!</p>
             <div className="card-container">
               <div className="card">

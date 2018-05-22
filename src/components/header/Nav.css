@@ -1,6 +1,11 @@
+img#nav-logo {
+  width: 150px!important;
+}
+
 .navLinkHelp{
   margin-right: 36px;
 }
+
 .signOutNav{
   margin-left: -39px;
   border: none;
@@ -36,8 +41,4 @@
 
 .nav_bar a:hover {
   color: lightgrey;
-}
-
-img#nav-logo {
-  width: 150px!important;
 }

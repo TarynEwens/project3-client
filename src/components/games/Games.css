@@ -1,23 +1,10 @@
-/* * {
-	background-color: #0bb;
-	font-family: sans-serif;
-	color: #fff;
-}
-
-body {
-	width: 40rem;
-	border: 2px solid #088;
-	margin: 1rem auto;
-	display: flex;
-	justify-content: space-evenly;
-} */
+ /* ROCK PAPER SCISSORS */
 
 .player-card {
 	width: 12.5rem;
 	height: 12.5rem;
 	margin: 1.25rem;
 	border-radius: 50%;
-	/* background-color: #ddd; */
 	text-align: center;
 	line-height: 12.5rem;
 	position: relative;
