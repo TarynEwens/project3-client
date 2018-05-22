@@ -25,7 +25,8 @@ class RPS extends Component {
       cheese: "",
       user: "",
       points: "",
-      win: false
+      win: false,
+			button: false
     }
 	}
 
@@ -63,7 +64,11 @@ class RPS extends Component {
 	}
 
 	runGame = () => {
-    this.setState({win: false});
+		this.fetchUser();
+    this.setState({
+			win: false,
+			button: true
+		});
 		let counter = 0
 		let myInterval = setInterval(() => {
 			counter++
@@ -76,9 +81,13 @@ class RPS extends Component {
 				clearInterval(myInterval)
         this.setState({cheese: Math.floor(Math.random() * 100) + 2 })
 				this.setState({winner: this.decideWinner()})
+				setTimeout(this.reactivateButton, 3000);
 			}
 		},100)
+	}
 
+	reactivateButton = () => {
+		this.setState({button: false})
 	}
 
   sendReward = () => {
@@ -101,7 +110,7 @@ class RPS extends Component {
       })
 			console.log("patch finished");
     }
-		this.fetchUser();
+
   }
 
 	render() {
@@ -132,6 +141,7 @@ class RPS extends Component {
               label="Play"
               type="submit"
               primary={true}
+							disabled={this.state.button}
               onClick={this.runGame}
             />
 
