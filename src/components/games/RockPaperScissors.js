@@ -26,7 +26,7 @@ class RPS extends Component {
       user: "",
       points: "",
       win: false,
-			button: false
+			button: false,
     }
 	}
 
@@ -67,7 +67,7 @@ class RPS extends Component {
 		this.fetchUser();
     this.setState({
 			win: false,
-			button: true
+			button: true,
 		});
 		let counter = 0
 		let myInterval = setInterval(() => {
@@ -81,7 +81,7 @@ class RPS extends Component {
 				clearInterval(myInterval)
         this.setState({cheese: Math.floor(Math.random() * 100) + 2 })
 				this.setState({winner: this.decideWinner()})
-				setTimeout(this.reactivateButton, 3000);
+				setTimeout(this.reactivateButton, 1000);
 			}
 		},100)
 	}

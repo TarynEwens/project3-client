@@ -37,3 +37,7 @@
 .hide {
 	display: none;
 }
+
+.small {
+	font-size: .75em;
+}
