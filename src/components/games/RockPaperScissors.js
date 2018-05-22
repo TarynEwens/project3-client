@@ -101,6 +101,7 @@ class RPS extends Component {
       })
 			console.log("patch finished");
     }
+		this.fetchUser();
   }
 
 	render() {
