@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import RaisedButton from "material-ui/RaisedButton";
-import TextField from "material-ui/TextField";
-import { Redirect } from 'react-router';
 import axios from "axios";
-import { Link } from "react-router-dom";
 import jwtDecoder from "jwt-decode";
 import CircularProgress from "material-ui/CircularProgress";
-import css from './Pet.css'
 
 // Images
 import AxolotlNeutral from './images/Axolotl/Axolotl_neutral.png';
@@ -36,7 +32,6 @@ import RatNap from './images/Rat/Rat_nap.png';
 import Burger from './images/Items/Burger.png';
 import HotDog from './images/Items/Hot_Dog.png';
 import SoccerBall from './images/Items/Soccer_Ball.png';
-import Cheese from './images/Items/Cheese.png'
 
 const style = {
   margin: 15

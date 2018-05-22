@@ -1,11 +1,9 @@
 import React, { PureComponent as Component } from "react";
-
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import axios from "axios";
 import jwtDecoder from "jwt-decode";
 import CircularProgress from "material-ui/CircularProgress";
-import { Link } from "react-router-dom";
 
 const style = {
   margin: 15

@@ -3,7 +3,6 @@ import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import { Redirect } from 'react-router';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {

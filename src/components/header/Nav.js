@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from './images/cheesepets-logo-small.png'
 import css from './Nav.css'
 
 

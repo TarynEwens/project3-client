@@ -49,7 +49,7 @@ class RPS extends Component {
 
 	decideWinner = ()=> {
 		const {computer, player} = this.state
-		if(player == computer) {
+		if(player === computer) {
 			return "It's a draw. No cheese for you."
 		}
 		if((player==="pug" && computer==="kitty") ||
