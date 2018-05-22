@@ -9,7 +9,7 @@ import pug from './images/Pug/Pug_neutral.png';
 import rat from './images/Rat/Rat_neutral.png';
 import kitty from './images/Kitty/Kitty_neutral.png';
 import axolotl from './images/Axolotl/Axolotl_neutral.png';
-import css from './Pet.css'
+import './Pet.css'
 
 const style = {
   margin: 15

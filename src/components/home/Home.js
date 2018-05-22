@@ -6,7 +6,7 @@ import Kitty from './images/Kitty2.png';
 import Rat from './images/Rat_neutral.png';
 import Cheese from './images/Cheese.png';
 import Logo from './images/cheesepets-logo-large.png';
-import css from './Home.css';
+import './Home.css';
 import { Link } from "react-router-dom";
 
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
-import css from "./Users.css"
+import "./Users.css"
 
 class SignUp extends Component {
   state = {
@@ -47,7 +47,6 @@ class SignUp extends Component {
             }
           }
         }).then(async (res) => {
-          console.log(res.data.jwt);
           await localStorage.setItem("jwtToken", res.data.jwt);
           this.props.history.push("/adopt");
         });

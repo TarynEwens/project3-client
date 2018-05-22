@@ -228,7 +228,7 @@ class PetProfile extends Component {
         statement: "\"No more hugs thanks.\""
       })
     }
-    await console.log(this.state.happiness);
+    await console.log("");
     await axios({
       url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
       method: "patch",
@@ -269,7 +269,7 @@ class PetProfile extends Component {
         statement: "\"No thanks, I'm not tired.\""
       })
     }
-    await console.log(this.state.energy);
+    await console.log("");
     await axios({
       url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
       method: "patch",
@@ -310,7 +310,7 @@ class PetProfile extends Component {
         statement: "\"Ugh, no thanks. I'm not in the mood.\""
       })
     }
-    await console.log(this.state.fun);
+    await console.log("");
      await axios({
       url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
       method: "patch",
@@ -367,7 +367,7 @@ class PetProfile extends Component {
         statement: "\"Yuck. I'm not hungry.\""
       })
     }
-    await console.log(this.state.energy);
+    await console.log("");
     await axios({
       url: `https://cheesepets-db.herokuapp.com/pets/${this.state.user.pets[0].id}.json`,
       method: "patch",
