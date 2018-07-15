@@ -292,10 +292,9 @@ class PetProfile extends Component {
   }
 
   handleFun = async () =>  {
-    if (this.state.fun < 48 && this.state.hunger > 2 && this.state.points >= 30) {
+    if (this.state.fun < 48 && this.state.points >= 30) {
       this.setState({
         fun: this.state.fun + 4,
-        hunger: this.state.hunger - 2,
         points: this.state.points - 30,
         action: "fun",
         statement: "\"This is so fun! I love balls!\""
@@ -319,7 +318,6 @@ class PetProfile extends Component {
       },
       data: {
         fun: this.state.fun,
-        hunger: this.state.hunger
       }
     })
     .then(res => {
@@ -349,9 +347,8 @@ class PetProfile extends Component {
   }
 
   handleFood = async () =>  {
-    if (this.state.hunger < 48 && this.state.energy > 2 && this.state.points >= 20) {
+    if (this.state.hunger < 48 && this.state.points >= 20) {
       this.setState({
-        energy: this.state.energy - 1,
         hunger: this.state.hunger + 4,
         points: this.state.points - 20,
         action: "hunger",
@@ -375,7 +372,6 @@ class PetProfile extends Component {
         authorization: `Bearer ${window.localStorage.jwtToken}`
       },
       data: {
-        energy: this.state.energy,
         hunger: this.state.hunger,
       }
     }).then(res => {
